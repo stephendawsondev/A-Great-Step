@@ -1,18 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>A Great Step</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
+    <!-- The static outer part of the app -->
+    <div class="app-container">
+      <!-- The first view for the user -->
+      <section id="landing-page">
+        <div class="content-container">
+          <div class="image-container">
+            <svg role="img" aria-labelledby="title" class="section__image">
+              <title id="title">Placeholder</title>
+              [design code]
+            </svg>
+          </div>
+          <div class="content-container">
+            <h1>A Great Step</h1>
+            <h2 class="subheading1">Walk your way to your fitness goals</h2>
+            <button id="create-a-goal" class="btn cta">Create a goal</button>
+            <button id="import-a-goal" class="btn cta">Import a goal</button>
+          </div>
+        </div>
+        <!-- Modal for importing existing goal -->
+        <dialog>
+          <h3 class="modal-title">Add your goal's JSON data</h3>
+          <form id="import-form" method="dialog">
+            <textarea placeholder="Paste your goal's JSON data here"></textarea>
+            <!-- TODO: I need to determine how these buttons are associated with Cancel and Submit -->
+            <button class="close">X</button>
+            <button class="btn cta">Show me my goal!</button>
+          </form>
+        </dialog>
+      </section>
+      <section>
+        <div class="content-container">
+          <div class="image-container">
+            <svg role="img" aria-labelledby="title" class="section__image">
+              <title id="title">Placeholder</title>
+              [design code]
+            </svg>
+          </div>
+          <div class="content-container">
+            <h2 class="section-title">Your details</h2>
+            <form action="#" method="POST">
+              <div class="two-fields">
+                <label for="first-name">First name</label>
+                <input
+                  id="first-name"
+                  name="first-name"
+                  placeholder="John"
+                  type="text"
+                />
+                <label for="last-name">Last name</label>
+                <input
+                  id="last-name"
+                  name="last-name"
+                  placeholder="John"
+                  type="text"
+                />
+              </div>
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                placeholder="john_smith@gmail.com"
+                type="email"
+              />
+              <div class="radio-buttons">
+                <label>
+                  <input type="radio" value="male" name="gender" />
+                  Male
+                </label>
+                <label>
+                  <input type="radio" value="female" name="gender" />
+                  Female
+                </label>
+                <label>
+                  <input type="radio" value="non-binary" name="gender" />
+                  Non-binary
+                </label>
+              </div>
+              <div class="three-fields">
+                <div class="field-container">
+                  <label for="age">Age</label>
+                  <input id="age" name="age" type="number" />
+                </div>
+                <div class="field-container">
+                  <label for="height">Height (cm)</label>
+                  <input id="height" name="height" type="number" />
+                </div>
+                <div class="field-container">
+                  <label for="weight">Weight (kg)</label>
+                  <input id="weight" name="weight" type="number" />
+                </div>
+              </div>
+              <button class="btn back"><- Back</button>
+              <button class="btn next">Next -></button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="content-container">
+          <div class="image-container">
+            <svg role="img" aria-labelledby="title" class="section__image">
+              <title id="title">Placeholder</title>
+              [design code]
+            </svg>
+          </div>
+          <div class="content-container"></div>
+        </div>
+      </section>
+      <section>
+        <div class="content-container">
+          <div class="image-container">
+            <svg role="img" aria-labelledby="title" class="section__image">
+              <title id="title">Placeholder</title>
+              [design code]
+            </svg>
+          </div>
+          <div class="content-container"></div>
+        </div>
+      </section>
+    </div>
     <script src="assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
