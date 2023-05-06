@@ -12,9 +12,9 @@
   <body>
     <!-- The static outer part of the app -->
     <div class="app-container">
-      <!-- The first view for the user -->
-      <section id="landing-page">
-        <div class="content-container">
+      <!-- Landing page - the first view for the user -->
+      <section id="landing-page" aria-labelledby="landing-heading">
+        <div class="container">
           <div class="image-container">
             <svg role="img" aria-labelledby="title" class="section__image">
               <title id="title">Placeholder</title>
@@ -22,7 +22,7 @@
             </svg>
           </div>
           <div class="content-container">
-            <h1>A Great Step</h1>
+            <h1 id="landing-heading">A Great Step</h1>
             <h2 class="subheading1">Walk your way to your fitness goals</h2>
             <button id="create-a-goal" class="btn cta">Create a goal</button>
             <button id="import-a-goal" class="btn cta">Import a goal</button>
@@ -39,8 +39,9 @@
           </form>
         </dialog>
       </section>
-      <section>
-        <div class="content-container">
+      <!-- Details form - collection user's personal details -->
+      <section id="details-form" aria-labelledby="your-details-heading">
+        <div class="container">
           <div class="image-container">
             <svg role="img" aria-labelledby="title" class="section__image">
               <title id="title">Placeholder</title>
@@ -48,8 +49,10 @@
             </svg>
           </div>
           <div class="content-container">
-            <h2 class="section-title">Your details</h2>
-            <form action="#" method="POST">
+            <h2 id="your-details-heading" class="section-title">
+              Your details
+            </h2>
+            <form action="#" method="post">
               <div class="two-fields">
                 <label for="first-name">First name</label>
                 <input
@@ -101,32 +104,116 @@
                   <input id="weight" name="weight" type="number" />
                 </div>
               </div>
-              <button class="btn back"><- Back</button>
-              <button class="btn next">Next -></button>
+              <div class="form-buttons">
+                <button class="btn back"><- Back</button>
+                <button class="btn next">Next -></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- Activity level - Gauge user's fitness level -->
+      <section
+        id="activity-level-form"
+        aria-labelledby="activity-level-heading"
+      >
+        <div class="container">
+          <div class="image-container">
+            <svg role="img" aria-labelledby="title" class="section__image">
+              <title id="title">Placeholder</title>
+              [design code]
+            </svg>
+          </div>
+          <div class="content-container">
+            <h2 id="activity-level-heading" class="section-title">
+              Your activity level
+            </h2>
+            <form action="#" method="post">
+              <fieldset>
+                <legend>Walking frequency</legend>
+                <div class="walking-level-cards">
+                  <label>
+                    <!-- TODO: image placeholder -->
+                    <img src="#" alt="placeholder" />
+                    <input type="radio" name="walking-frequency" />
+                    I walk a little
+                    <p>(1-2 times a week)</p>
+                  </label>
+                  <label>
+                    <!-- TODO: image placeholder -->
+                    <img src="#" alt="placeholder" />
+                    <input type="radio" name="walking-frequency" />
+                    I walk often
+                    <p>(3-4 times a week)</p>
+                  </label>
+                  <label>
+                    <!-- TODO: image placeholder -->
+                    <img src="#" alt="placeholder" />
+                    <input type="radio" name="walking-frequency" />
+                    I walk a lot
+                    <p>(5+ days per week)</p>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="form-buttons">
+                <button class="btn back"><- Back</button>
+                <button class="btn next">Next -></button>
+              </div>
             </form>
           </div>
         </div>
       </section>
       <section>
-        <div class="content-container">
+        <div class="container">
           <div class="image-container">
             <svg role="img" aria-labelledby="title" class="section__image">
               <title id="title">Placeholder</title>
               [design code]
             </svg>
           </div>
-          <div class="content-container"></div>
-        </div>
-      </section>
-      <section>
-        <div class="content-container">
-          <div class="image-container">
-            <svg role="img" aria-labelledby="title" class="section__image">
-              <title id="title">Placeholder</title>
-              [design code]
-            </svg>
+          <div class="content-container">
+            <h2 id="goal-details-heading">Your goal</h2>
+            <form action="#" method="post">
+              <label for="target-weight">What is your target weight?</label>
+              <input type="number" name="target-weight" placeholder="75" />
+              <label for="">When do you want to achieve your goal by?</label>
+              <input type="date" name="target-date" />
+              <div class="days-of-the-week">
+                <label>
+                  <input type="checkbox" value="monday" name="monday" />
+                  M
+                </label>
+                <label>
+                  <input type="checkbox" value="tuesday" name="tuesday" />
+                  T
+                </label>
+                <label>
+                  <input type="checkbox" value="wednesday" name="wednesday" />
+                  W
+                </label>
+                <label>
+                  <input type="checkbox" value="thursday" name="thursday" />
+                  T
+                </label>
+                <label>
+                  <input type="checkbox" value="friday" name="friday" />
+                  F
+                </label>
+                <label>
+                  <input type="checkbox" value="saturday" name="saturday" />
+                  S
+                </label>
+                <label>
+                  <input type="checkbox" value="sunday" name="sunday" />
+                  S
+                </label>
+              </div>
+              <div class="form-buttons">
+                <button class="btn back"><- Back</button>
+                <button class="btn next">Generate plan</button>
+              </div>
+            </form>
           </div>
-          <div class="content-container"></div>
         </div>
       </section>
     </div>
