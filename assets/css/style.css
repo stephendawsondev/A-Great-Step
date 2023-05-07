@@ -1,0 +1,105 @@
+/* Import Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;700&family=Exo:ital,wght@0,400;0,700;1,500&family=Lobster+Two&display=swap");
+
+/* Global styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #d2e6ef;
+  font-family: "Catamaran", sans-serif;
+}
+
+:focus {
+  outline-color: #4a9cbf;
+}
+
+section {
+  height: 100vh;
+}
+
+section * {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 1.75em;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+h2,
+h3 {
+  font-family: "Exo", sans-serif;
+  font-weight: 500;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 1.45rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-family: "Catamaran", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.1);
+}
+
+/* Landing */
+#landing-page {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Lobster Two", sans-serif;
+  font-size: 3rem;
+  margin: auto 0;
+}
+
+#landing-page .btn {
+  width: 100%;
+}
+
+#landing-page dialog {
+  height: 75%;
+  text-align: left;
+}
+
+#landing-page dialog h3 {
+  font-size: 1rem;
+  margin-top: 2em;
+}
+
+#landing-page dialog form {
+  height: 90%;
+}
+
+#landing-page dialog textarea {
+  font-family: "Catamaran", sans-serif;
+  width: 100%;
+  height: 75%;
+}
+
+#landing-page dialog .close {
+  width: initial;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
