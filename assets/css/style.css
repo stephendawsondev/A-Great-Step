@@ -79,7 +79,7 @@ fieldset {
   padding: 0;
 }
 
-/* Landing */
+/* Landing section */
 #landing-page {
   text-align: center;
 }
@@ -124,7 +124,7 @@ h1 {
   right: 0.5em;
 }
 
-/* Your details */
+/* Your details section */
 #details-form fieldset label {
   display: inline;
   margin-right: 1em;
@@ -148,4 +148,45 @@ h1 {
 
 .form-buttons .btn {
   width: 48%;
+}
+
+/* Your activity levels section */
+.walking-level-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.walking-level-cards label {
+  width: 70%;
+  border-radius: 5%;
+  position: relative;
+}
+
+.walking-level-cards label svg {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.walking-level-cards label input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#activity-level-form
+  .walking-level-cards
+  label:has(input[type="radio"]:checked) {
+  border: 0.25em solid #4a9cbf;
+}
+
+#activity-level-form .walking-level-cards label p {
+  margin-top: 0;
 }
