@@ -192,6 +192,7 @@ h1 {
 
 #activity-level-form .walking-level-cards label p {
   margin-top: 0;
+  font-style: italic;
 }
 
 /* Goal details section */
@@ -226,4 +227,31 @@ h1 {
 .days-container label:has(input[type="checkbox"]:checked) {
   background-color: #36454f;
   color: white;
+}
+
+/* Media queries */
+@media screen and (min-width: 749px) {
+  /* Global styles */
+  .container {
+    width: 85%;
+  }
+
+  section .image-container {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+
+  /* Activity level */
+  .walking-level-cards {
+    flex-direction: row;
+  }
+
+  .walking-level-cards label svg {
+    width: 80%;
+  }
+
+  /* Goal details */
+  .days-container {
+    width: 60%;
+  }
 }

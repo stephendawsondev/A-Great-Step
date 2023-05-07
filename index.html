@@ -1175,15 +1175,25 @@
                 <fieldset>
                   <legend>Gender</legend>
                   <label>
-                    <input type="radio" value="male" name="gender" />
+                    <input type="radio" id="male" value="male" name="gender" />
                     Male
                   </label>
                   <label>
-                    <input type="radio" value="female" name="gender" />
+                    <input
+                      type="radio"
+                      id="female"
+                      value="female"
+                      name="gender"
+                    />
                     Female
                   </label>
                   <label>
-                    <input type="radio" value="non-binary" name="gender" />
+                    <input
+                      type="radio"
+                      id="non-binary"
+                      value="non-binary"
+                      name="gender"
+                    />
                     Non-binary
                   </label>
                 </fieldset>
@@ -1770,7 +1780,12 @@
                         />
                       </svg>
                     </div>
-                    <input type="radio" name="walking-frequency" />
+                    <input
+                      id="walk-a-little"
+                      value="walk-a-little"
+                      type="radio"
+                      name="walking-frequency"
+                    />
                     I walk a little
                     <p>(1-2 times a week)</p>
                   </label>
@@ -1832,7 +1847,12 @@
                         />
                       </svg>
                     </div>
-                    <input type="radio" name="walking-frequency" />
+                    <input
+                      id="walk-often"
+                      value="walk-often"
+                      type="radio"
+                      name="walking-frequency"
+                    />
                     I walk often
                     <p>(3-4 times a week)</p>
                   </label>
@@ -1942,7 +1962,12 @@
                         />
                       </svg>
                     </div>
-                    <input type="radio" name="walking-frequency" />
+                    <input
+                      id="walk-a-lot"
+                      value="walk-a-lot"
+                      type="radio"
+                      name="walking-frequency"
+                    />
                     I walk a lot
                     <p>(5+ times per week)</p>
                   </label>
@@ -2300,38 +2325,75 @@
                 >What is your target weight? (kg)</label
               >
               <input type="number" name="target-weight" placeholder="75" />
-              <label for="">When do you want to achieve your goal by?</label>
-              <input type="date" name="target-date" />
+              <label for="target-date"
+                >When do you want to achieve your goal by?</label
+              >
+              <input type="date" name="target-date" id="target-date" />
               <div class="days-of-the-week">
                 <!-- TODO - Revisit days of the week labels as one letter labels don't seem accessible -->
                 <p>Select the days you can exercise</p>
                 <div class="days-container">
                   <label>
-                    <input type="checkbox" value="monday" name="monday" />
+                    <input
+                      type="checkbox"
+                      value="monday"
+                      id="monday"
+                      name="monday"
+                    />
                     M
                   </label>
                   <label>
-                    <input type="checkbox" value="tuesday" name="tuesday" />
+                    <input
+                      type="checkbox"
+                      value="tuesday"
+                      id="tuesday"
+                      name="tuesday"
+                    />
                     T
                   </label>
                   <label>
-                    <input type="checkbox" value="wednesday" name="wednesday" />
+                    <input
+                      type="checkbox"
+                      value="wednesday"
+                      id="wednesday"
+                      name="wednesday"
+                    />
                     W
                   </label>
                   <label>
-                    <input type="checkbox" value="thursday" name="thursday" />
+                    <input
+                      type="checkbox"
+                      value="thursday"
+                      id="thursday"
+                      name="thursday"
+                    />
                     T
                   </label>
                   <label>
-                    <input type="checkbox" value="friday" name="friday" />
+                    <input
+                      type="checkbox"
+                      value="friday"
+                      id="friday"
+                      name="friday"
+                    />
                     F
                   </label>
                   <label>
-                    <input type="checkbox" value="saturday" name="saturday" />
+                    <input
+                      type="checkbox"
+                      value="saturday"
+                      id="saturday"
+                      name="saturday"
+                    />
                     S
                   </label>
                   <label>
-                    <input type="checkbox" value="sunday" name="sunday" />
+                    <input
+                      type="checkbox"
+                      value="sunday"
+                      id="sunday"
+                      name="sunday"
+                    />
                     S
                   </label>
                 </div>
