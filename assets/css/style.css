@@ -12,6 +12,7 @@ html {
 
 body {
   background-color: #d2e6ef;
+  color: #36454f;
   font-family: "Catamaran", sans-serif;
 }
 
@@ -67,9 +68,11 @@ form label {
 
 input[type="text"],
 input[type="email"],
-input[type="number"] {
+input[type="number"],
+input[type="date"] {
   line-height: 2.25;
   width: 100%;
+  font-family: "Catamaran", sans-serif;
 }
 
 fieldset {
@@ -167,7 +170,7 @@ h1 {
 
 .walking-level-cards label svg {
   width: 50%;
-  border: 2px solid black;
+  border: 2px solid #36454f;
   border-radius: 50%;
 }
 
@@ -189,4 +192,38 @@ h1 {
 
 #activity-level-form .walking-level-cards label p {
   margin-top: 0;
+}
+
+/* Goal details section */
+.days-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.days-container label {
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid #36454f;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.days-container input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.days-container label:has(input[type="checkbox"]:focus) {
+  outline: 2px solid #4a9cbf;
+}
+
+.days-container label:has(input[type="checkbox"]:checked) {
+  background-color: #36454f;
+  color: white;
 }

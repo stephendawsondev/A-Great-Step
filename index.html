@@ -2296,41 +2296,45 @@
           <div class="content-container">
             <h2 id="goal-details-heading">Your goal</h2>
             <form action="#" method="post">
-              <label for="target-weight">What is your target weight?</label>
+              <label for="target-weight"
+                >What is your target weight? (kg)</label
+              >
               <input type="number" name="target-weight" placeholder="75" />
               <label for="">When do you want to achieve your goal by?</label>
               <input type="date" name="target-date" />
               <div class="days-of-the-week">
                 <!-- TODO - Revisit days of the week labels as one letter labels don't seem accessible -->
                 <p>Select the days you can exercise</p>
-                <label>
-                  <input type="checkbox" value="monday" name="monday" />
-                  M
-                </label>
-                <label>
-                  <input type="checkbox" value="tuesday" name="tuesday" />
-                  T
-                </label>
-                <label>
-                  <input type="checkbox" value="wednesday" name="wednesday" />
-                  W
-                </label>
-                <label>
-                  <input type="checkbox" value="thursday" name="thursday" />
-                  T
-                </label>
-                <label>
-                  <input type="checkbox" value="friday" name="friday" />
-                  F
-                </label>
-                <label>
-                  <input type="checkbox" value="saturday" name="saturday" />
-                  S
-                </label>
-                <label>
-                  <input type="checkbox" value="sunday" name="sunday" />
-                  S
-                </label>
+                <div class="days-container">
+                  <label>
+                    <input type="checkbox" value="monday" name="monday" />
+                    M
+                  </label>
+                  <label>
+                    <input type="checkbox" value="tuesday" name="tuesday" />
+                    T
+                  </label>
+                  <label>
+                    <input type="checkbox" value="wednesday" name="wednesday" />
+                    W
+                  </label>
+                  <label>
+                    <input type="checkbox" value="thursday" name="thursday" />
+                    T
+                  </label>
+                  <label>
+                    <input type="checkbox" value="friday" name="friday" />
+                    F
+                  </label>
+                  <label>
+                    <input type="checkbox" value="saturday" name="saturday" />
+                    S
+                  </label>
+                  <label>
+                    <input type="checkbox" value="sunday" name="sunday" />
+                    S
+                  </label>
+                </div>
               </div>
               <div class="form-buttons">
                 <button class="btn back"><- Back</button>

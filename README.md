@@ -8,3 +8,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog (MDN Documentat
 ## Images
 
 <a href="https://storyset.com/">Illustrations by Storyset</a>
+
+<!-- Reminders -->
+
+1. Add aria-labels to back and next buttons
