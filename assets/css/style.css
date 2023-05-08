@@ -21,7 +21,7 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 section * {
@@ -237,7 +237,7 @@ h1 {
   }
 
   section .image-container {
-    max-width: 75%;
+    width: 75%;
     margin: 0 auto;
   }
 
@@ -253,5 +253,67 @@ h1 {
   /* Goal details */
   .days-container {
     width: 60%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  /* Global styles */
+  section {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    min-height: 75%;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  section .image-container {
+    margin: initial;
+    width: 45%;
+  }
+
+  section .content-container {
+    margin-left: 2em;
+  }
+
+  h2,
+  h3 {
+    text-align: initial;
+  }
+
+  /* Landing */
+  #landing-page {
+    text-align: initial;
+  }
+
+  #landing-page .btn.cta {
+    display: inline-block;
+    width: 48%;
+  }
+
+  #import-a-goal {
+    margin-left: 0.5em;
+  }
+
+  #landing-page dialog {
+    height: 50%;
+    width: 75%;
+  }
+
+  #landing-page dialog form {
+    height: 80%;
+  }
+
+  /* Your details */
+  .two-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .two-fields .field-container {
+    width: 48%;
   }
 }

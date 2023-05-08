@@ -1,5 +1,9 @@
 # Resources
 
+https://fontjoy.com/ (Font pairing)
+https://fonts.google.com/ (Google Fonts)
+https://coolors.co/ (Color palette)
+
 ## Tuts
 
 https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/ (Article on adding accessible SVGs)
