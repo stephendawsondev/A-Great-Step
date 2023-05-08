@@ -8,6 +8,7 @@ https://coolors.co/ (Color palette)
 
 https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/ (Article on adding accessible SVGs)
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog (MDN Documentation on the dialog element for popup)
+https://draft.dev/learn/github-pages-404 (Adding a 404 to GitHub Pages)
 
 ## Images
 

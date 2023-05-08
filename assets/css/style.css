@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: #d2e6ef;
+  background-color: #bffffc26;
   color: #36454f;
   font-family: "Catamaran", sans-serif;
 }
@@ -31,6 +31,11 @@ section * {
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.btn {
+  background-color: #4a9cbf;
+  color: #fefefe;
 }
 
 svg {
@@ -91,6 +96,7 @@ h1 {
   font-family: "Lobster Two", sans-serif;
   font-size: 3rem;
   margin: auto 0;
+  color: #4a9cbf;
 }
 
 #landing-page .btn {
@@ -125,6 +131,7 @@ h1 {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
+  color: #4a9cbf;
 }
 
 /* Your details section */
@@ -222,10 +229,12 @@ h1 {
 
 .days-container label:has(input[type="checkbox"]:focus) {
   outline: 2px solid #4a9cbf;
+  outline-offset: 0.15em;
 }
 
 .days-container label:has(input[type="checkbox"]:checked) {
-  background-color: #36454f;
+  background-color: #4a9cbf;
+  border-color: #4a9cbf;
   color: white;
 }
 
@@ -271,12 +280,12 @@ h1 {
   }
 
   section .image-container {
-    margin: initial;
     width: 45%;
   }
 
   section .content-container {
     margin-left: 2em;
+    width: 65%;
   }
 
   h2,
@@ -315,5 +324,15 @@ h1 {
 
   .two-fields .field-container {
     width: 48%;
+  }
+
+  /* Activity level */
+  .walking-level-cards .image-container {
+    width: 75%;
+  }
+
+  /* Goal details */
+  .days-container {
+    width: 70%;
   }
 }
