@@ -25,7 +25,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: auto;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
 }
 
 section {
@@ -48,6 +48,11 @@ section * {
 .btn {
   background-color: #4a9cbf;
   color: #fefefe;
+}
+
+.image-container {
+  width: 75%;
+  margin: 0 auto;
 }
 
 svg {
@@ -255,11 +260,6 @@ h1 {
   /* Global styles */
   .container {
     width: 85%;
-  }
-
-  section .image-container {
-    width: 75%;
-    margin: 0 auto;
   }
 
   /* Activity level */

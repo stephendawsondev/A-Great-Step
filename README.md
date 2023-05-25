@@ -10,6 +10,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type (Scroll snap i
 https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/ (Article on adding accessible SVGs)
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog (MDN Documentation on the dialog element for popup)
 https://draft.dev/learn/github-pages-404 (Adding a 404 to GitHub Pages)
+https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html#param-and-returns (Information on Docstring commands)
+https://haydar-ai.medium.com/learning-how-to-git-creating-a-longer-commit-message-16ca32746c3a (How to write a good commit message for longer commands)
 
 ## Images
 
