@@ -1,5 +1,8 @@
 // only run the code when the DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // check if a goal already exists in LocalStorage
+  checkForExistingGoal();
+
   // landing page dialog controls
   const dialog = document.getElementsByTagName("dialog")[0];
   const importButton = document.getElementById("import-a-goal");
@@ -7,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   importButton.addEventListener("click", () => {
     dialog.showModal();
   });
+
+  const importForm = document.getElementById("import-form");
+  importForm.addEventListener("submit", handleImportSubmit);
 });
 
 /**
@@ -18,13 +24,67 @@ document.addEventListener("DOMContentLoaded", () => {
  * If it doesn't exist, it will create a new goal object in
  * LocalStorage.
  */
-const checkForExistingGoal = () => {};
+const checkForExistingGoal = () => {
+  // Check if goal exists in LocalStorage
+  const goalData = localStorage.getItem("goal");
+  if (goalData) {
+    const goal = JSON.parse(goalData);
+    console.log(goal);
+  } else {
+    // Goal doesn't exist yet, create an empty array in LocalStorage
+    localStorage.setItem("goal", JSON.stringify({}));
+  }
+};
+
+/**
+ * Handles the submission of the import form. It will check
+ * the JSON input and update the goal object in LocalStorage.
+ */
+const handleImportSubmit = (event) => {
+  const importTextarea = document.querySelector("#import-form textarea");
+  const textareaValue = importTextarea.value.trim();
+
+  // detructure object with error and isValid properties
+  const { isValid, error } = validateJsonInput(textareaValue);
+
+  if (isValid) {
+    // Update the goal object in LocalStorage
+    const goal = JSON.parse(textareaValue);
+    localStorage.setItem("goal", JSON.stringify(goal));
+    // Redirect the user to the goal page (not created yet)
+    // window.location.href = "goal.html";
+
+    // Clear the textarea after submission
+    importTextarea.value = "";
+  } else {
+    event.preventDefault();
+    // display error message above text area
+    const errorElement = document.createElement("p");
+    errorElement.classList.add("error");
+    errorElement.textContent =
+      'The JSON you entered is invalid. JSON should be formatted like this: {"key": "value"}.';
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement resource
+    // used
+    importTextarea.insertAdjacentElement("beforebegin", errorElement);
+
+    // log the error to the console
+    console.error(error);
+  }
+};
 
 /**
  * Validate the JSON input of an existing goal. If the JSON is
  * valid, it will update the goal object in LocalStorage.
  */
-const validateJsonInput = () => {};
+const validateJsonInput = (inputText) => {
+  try {
+    JSON.parse(inputText);
+    return { isValid: true, error: null };
+  } catch (error) {
+    return { isValid: false, error: error.message };
+  }
+};
 
 /**
  * Handles the 'next' button click. Clicking next will update
