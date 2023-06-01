@@ -179,16 +179,46 @@ const handleFormValidation = (currentSectionIndex) => {
       // the method here: https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity
       if (!element.validity.valid) {
         // check if an error message already exists
-        if (!element.nextSibling.classList.contains("error")) {
+        if (
+          !element.nextElementSibling?.classList.contains("error") &&
+          !element.parentElement.parentElement.nextElementSibling?.classList.contains(
+            "error"
+          )
+        ) {
           const errorElement = document.createElement("p");
           errorElement.classList.add("error");
           errorElement.textContent = element.validationMessage;
-          element.after(errorElement);
-          containsErrors = true;
+          if (element.type === "radio") {
+            element.parentElement.parentElement.after(errorElement);
+          } else {
+            element.after(errorElement);
+          }
+        }
+      } else {
+        // check if an error message already exists
+        if (
+          element.type === "radio" &&
+          element.parentElement.parentElement.nextElementSibling?.classList.contains(
+            "error"
+          )
+        ) {
+          const errorElement =
+            element.parentElement.parentElement.nextElementSibling;
+          errorElement.remove();
+        } else if (element.nextElementSibling?.classList.contains("error")) {
+          const errorElement = element.nextElementSibling;
+          errorElement.remove();
         }
       }
     }
   }
+
+  // check if any errors exist
+  const errors = [...document.querySelectorAll(".error")];
+  if (errors.length > 0) {
+    containsErrors = true;
+  }
+
   if (containsErrors) return false;
   return true;
 };
