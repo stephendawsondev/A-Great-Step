@@ -122,6 +122,11 @@ const handleNextButtonClick = (event, currentSectionIndex) => {
 
   if (!fieldsValid) return;
 
+  const currentSection =
+    document.getElementsByTagName("section")[currentSectionIndex];
+
+  if (currentSection.id === "goal-form") return;
+
   // scroll to the next section
   const nextSection =
     document.getElementsByTagName("section")[currentSectionIndex + 1];
@@ -180,7 +185,6 @@ const handleFormValidation = (currentSectionIndex) => {
       }
     }
   }
-
   return true;
 };
 
