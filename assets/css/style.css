@@ -104,6 +104,12 @@ fieldset {
   padding: 0;
 }
 
+.error {
+  color: #da0505;
+  font-size: 1rem;
+  margin-top: 0.25em;
+}
+
 /* Landing section */
 #landing-page {
   text-align: center;

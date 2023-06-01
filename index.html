@@ -1158,6 +1158,7 @@
                     name="first-name"
                     placeholder="John"
                     type="text"
+                    required
                   />
                 </div>
                 <div class="field-container">
@@ -1181,7 +1182,13 @@
                 <fieldset>
                   <legend>Gender</legend>
                   <label>
-                    <input type="radio" id="male" value="male" name="gender" />
+                    <input
+                      type="radio"
+                      id="male"
+                      value="male"
+                      name="gender"
+                      required
+                    />
                     Male
                   </label>
                   <label>
@@ -1207,15 +1214,15 @@
               <div class="three-fields">
                 <div class="field-container">
                   <label for="age">Age</label>
-                  <input id="age" name="age" type="number" />
+                  <input id="age" name="age" type="number" required />
                 </div>
                 <div class="field-container">
                   <label for="height">Height (cm)</label>
-                  <input id="height" name="height" type="number" />
+                  <input id="height" name="height" type="number" required />
                 </div>
                 <div class="field-container">
                   <label for="weight">Weight (kg)</label>
-                  <input id="weight" name="weight" type="number" />
+                  <input id="weight" name="weight" type="number" required />
                 </div>
               </div>
               <div class="form-buttons">
@@ -1791,6 +1798,7 @@
                       value="walk-a-little"
                       type="radio"
                       name="walking-frequency"
+                      required
                     />
                     I walk a little
                     <p>(1-2 times a week)</p>
@@ -2330,11 +2338,16 @@
               <label for="target-weight"
                 >What is your target weight? (kg)</label
               >
-              <input type="number" name="target-weight" placeholder="75" />
+              <input
+                type="number"
+                name="target-weight"
+                placeholder=" 75"
+                required
+              />
               <label for="target-date"
                 >When do you want to achieve your goal by?</label
               >
-              <input type="date" name="target-date" id="target-date" />
+              <input type="date" name="target-date" id="target-date" required />
               <div class="days-of-the-week">
                 <!-- TODO - Revisit days of the week labels as one letter labels don't seem accessible -->
                 <p>Select the days you can exercise</p>

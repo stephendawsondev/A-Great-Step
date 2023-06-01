@@ -67,6 +67,7 @@ const handleImportSubmit = (event) => {
   const importTextarea = document.querySelector("#import-form textarea");
   const textareaValue = importTextarea.value.trim();
 
+  if (!textareaValue) return;
   // detructure object with error and isValid properties
   const { isValid, error } = validateJsonInput(textareaValue);
 
@@ -79,9 +80,14 @@ const handleImportSubmit = (event) => {
 
     // Clear the textarea after submission
     importTextarea.value = "";
+
+    // clear errors
+    const errorElement = document?.querySelector(".error");
+    if (errorElement) errorElement.remove();
   } else {
     event.preventDefault();
     // display error message above text area
+    if (document.querySelector(".error")) return;
     const errorElement = document.createElement("p");
     errorElement.classList.add("error");
     errorElement.textContent =
@@ -164,6 +170,7 @@ const handleFormValidation = (currentSectionIndex) => {
   // select form elements in the current section
   const sectionFormElements = [...currentSection.querySelectorAll("input")];
 
+  let containsErrors = false;
   // loop through the form elements and validate them
   for (const element of sectionFormElements) {
     // check if the input is required
@@ -172,19 +179,17 @@ const handleFormValidation = (currentSectionIndex) => {
       // the method here: https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity
       if (!element.validity.valid) {
         // check if an error message already exists
-        if (!element.previousElementSibling.classList.contains("error")) {
+        if (!element.nextSibling.classList.contains("error")) {
           const errorElement = document.createElement("p");
           errorElement.classList.add("error");
           errorElement.textContent = element.validationMessage;
-          element.insertAdjacentElement("beforebegin", errorElement);
+          element.after(errorElement);
+          containsErrors = true;
         }
-        // log the error to the console
-        console.error(element.validationMessage);
-
-        return false;
       }
     }
   }
+  if (containsErrors) return false;
   return true;
 };
 
