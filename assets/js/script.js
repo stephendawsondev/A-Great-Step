@@ -193,6 +193,24 @@ const handleFormValidation = (currentSectionIndex) => {
           } else {
             element.after(errorElement);
           }
+
+          if (
+            element.type === "text" ||
+            element.type === "date" ||
+            element.type === "number"
+          ) {
+            element.addEventListener("input", () => {
+              if (element.validity.valid) {
+                errorElement.remove();
+              }
+            });
+          } else {
+            element.addEventListener("change", () => {
+              if (element.validity.valid) {
+                errorElement.remove();
+              }
+            });
+          }
         }
       } else {
         // check if an error message already exists
