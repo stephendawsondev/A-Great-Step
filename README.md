@@ -29,3 +29,4 @@ https://haydar-ai.medium.com/learning-how-to-git-creating-a-longer-commit-messag
 1. As sections have a 100vh height, the sections beneath it were overlapping - I needed to make the min-height 100vh instead. However, that caused the snap effect to break on mobile. Still working on a fix for this.
 2. When importing a goal, if there is already an error message displayed and invalid json is entered, another error message is added.
 3. When clicking the "next" or "previous" buttons, I was getting a 405 error. I had to prevent the default form submission behaviour to fix this.
+4. When removing radio button error, it only gets removed if the user clicks the first option. If they click another option, the error remains. I will try to fix this by adding a for loop to check all radio buttons.

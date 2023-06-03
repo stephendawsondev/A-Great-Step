@@ -194,6 +194,7 @@ const handleFormValidation = (currentSectionIndex) => {
             element.after(errorElement);
           }
 
+          // add event listeners to the input elements to remove the error
           if (
             element.type === "text" ||
             element.type === "date" ||
