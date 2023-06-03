@@ -238,7 +238,33 @@ const handleFormValidation = (currentSectionIndex) => {
   }
 
   if (containsErrors) return false;
+  updateGoalObject(sectionFormElements);
   return true;
+};
+
+/**
+ * Updates the JSON object at each step of the form. This will
+ * be used to update the goal object in LocalStorage.
+ */
+const updateGoalObject = (fields) => {
+  // get the goal object from LocalStorage
+  const goalData = localStorage.getItem("goal");
+  const goal = JSON.parse(goalData);
+
+  const updatedFields = {};
+  // loop through the fields and update the goal object
+  for (const field of fields) {
+    const fieldName = field.name;
+    const fieldValue = field.value;
+
+    updatedFields[fieldName] = fieldValue;
+  }
+
+  // update the goal object with the new values
+  const updatedGoal = { ...goal, ...updatedFields };
+
+  // update the goal object in LocalStorage
+  localStorage.setItem("goal", JSON.stringify(updatedGoal));
 };
 
 /**
