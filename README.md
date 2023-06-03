@@ -30,3 +30,4 @@ https://haydar-ai.medium.com/learning-how-to-git-creating-a-longer-commit-messag
 2. When importing a goal, if there is already an error message displayed and invalid json is entered, another error message is added.
 3. When clicking the "next" or "previous" buttons, I was getting a 405 error. I had to prevent the default form submission behaviour to fix this.
 4. When removing radio button error, it only gets removed if the user clicks the first option. If they click another option, the error remains. I will try to fix this by adding a for loop to check all radio buttons.
+5. When updating form fields in local stoage, the last radio button is always selected. Also, all checkbox values are added. I think I will add a "checked" property so that only those that are checked are added. For the radio buttons, I will add a "selected" property.
