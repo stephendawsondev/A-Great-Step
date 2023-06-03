@@ -116,10 +116,13 @@ fieldset {
 }
 
 h1 {
-  font-family: "Lobster Two", sans-serif;
   font-size: 3rem;
   margin: auto 0;
   color: #4a9cbf;
+}
+
+#landing-heading {
+  font-family: "Lobster Two", sans-serif;
 }
 
 #landing-page .btn {

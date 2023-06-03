@@ -52,7 +52,6 @@ const checkForExistingGoal = () => {
   const goalData = localStorage.getItem("goal");
   if (goalData) {
     const goal = JSON.parse(goalData);
-    console.log(goal);
   } else {
     // Goal doesn't exist yet, create an empty array in LocalStorage
     localStorage.setItem("goal", JSON.stringify({}));
