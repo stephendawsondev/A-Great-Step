@@ -45,11 +45,6 @@ section * {
   margin: 0 auto;
 }
 
-.btn {
-  background-color: #4a9cbf;
-  color: #fefefe;
-}
-
 .image-container {
   width: 75%;
   margin: 0 auto;
@@ -73,6 +68,8 @@ h2 {
 }
 
 .btn {
+  background-color: #4a9cbf;
+  color: #fefefe;
   border: none;
   border-radius: 0.25em;
   cursor: pointer;
@@ -265,6 +262,21 @@ h1 {
   color: white;
 }
 
+/* 404 page */
+#page-not-found-content {
+  text-align: center;
+}
+
+#page-not-found-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+a.back-home {
+  text-decoration: none;
+  margin-top: 6em;
+}
+
 /* Media queries */
 @media screen and (min-width: 749px) {
   /* Global styles */
@@ -357,5 +369,14 @@ h1 {
   /* Goal details */
   .days-container {
     width: 70%;
+  }
+
+  /* 404 page */
+  #page-not-found-content .image-container {
+    width: 55%;
+  }
+
+  #page-not-found-content .content-container {
+    width: 45%;
   }
 }
