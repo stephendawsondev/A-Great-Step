@@ -263,7 +263,8 @@ h1 {
 }
 
 /* 404 page */
-#page-not-found-content {
+#page-not-found-content,
+#goal-results {
   text-align: center;
 }
 
@@ -275,6 +276,20 @@ h1 {
 a.back-home {
   text-decoration: none;
   margin-top: 6em;
+}
+
+/* Goal results page */
+#goal-results h1 {
+  font-size: 2rem;
+}
+
+#goal-results h1 + p {
+  margin-top: 0;
+}
+
+#goal-results p span {
+  font-weight: 700;
+  color: #4a9cbf;
 }
 
 /* Media queries */
@@ -372,11 +387,20 @@ a.back-home {
   }
 
   /* 404 page */
+  #page-not-found-content container {
+    max-width: 600px;
+  }
+
   #page-not-found-content .image-container {
     width: 55%;
   }
 
   #page-not-found-content .content-container {
     width: 45%;
+  }
+
+  /* Goal results page */
+  #goal-results {
+    text-align: left;
   }
 }
