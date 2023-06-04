@@ -7,6 +7,7 @@
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement (MDN Documentation on insertAdjacentElement)
 - https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript (MDN Documentation on form validation)
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity (MDN Documentation on validity)
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live (MDN Documentation on aria-live)
 
 ## Tuts
 

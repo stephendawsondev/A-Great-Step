@@ -68,17 +68,24 @@ h2 {
 }
 
 .btn {
+  display: inline-block;
   background-color: #4a9cbf;
   color: #fefefe;
   border: none;
   border-radius: 0.25em;
   cursor: pointer;
   font-family: "Catamaran", sans-serif;
-  font-size: 1rem;
+  font-size: 1.175rem;
   font-weight: 700;
   margin: 0.5em 0;
   padding: 0.5em 1em;
   box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.1);
+}
+
+/* Click effect for buttons */
+.btn:active {
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  transform: translateY(0.25em);
 }
 
 form label {
@@ -275,7 +282,6 @@ h1 {
 
 a.back-home {
   text-decoration: none;
-  margin-top: 6em;
 }
 
 /* Goal results page */
@@ -290,6 +296,20 @@ a.back-home {
 #goal-results p span {
   font-weight: 700;
   color: #4a9cbf;
+}
+
+#export-goal {
+  position: relative;
+}
+
+.copied {
+  position: absolute;
+  bottom: -110%;
+  opacity: 1;
+  color: #4a9cbf;
+  font-size: 0.75rem;
+  margin-top: 0.25em;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Media queries */
@@ -402,5 +422,12 @@ a.back-home {
   /* Goal results page */
   #goal-results {
     text-align: left;
+  }
+
+  .copied {
+    bottom: initial;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -110%;
   }
 }

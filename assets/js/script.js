@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // loop through the sections and add event listeners to the buttons
   for (const [index, section] of sections.entries()) {
+    if (section.id === "goal-results") {
+      const exportButton = section.querySelector("#export-goal");
+      exportButton.addEventListener("click", handleExportGoal);
+      return;
+    }
     // select the next and back buttons
     const nextButton = section.querySelector(".next");
 
@@ -15,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // before trying to select it
     const backButton = section?.querySelector(".back");
 
+    if (!nextButton) return;
     // add event listeners to the buttons
     nextButton.addEventListener("click", (event) => {
       handleNextButtonClick(event, index);
@@ -265,6 +271,38 @@ const updateGoalObject = (fields) => {
 
   // update the goal object in LocalStorage
   localStorage.setItem("goal", JSON.stringify(updatedGoal));
+};
+
+/**
+ * Handles the "Export goal" button click. The contents are copied
+ * to the clipboard and a success message is displayed.
+ */
+const handleExportGoal = () => {
+  // get the goal object from LocalStorage
+  const goalData = localStorage.getItem("goal");
+  const goal = JSON.parse(goalData);
+
+  // convert the goal object to a string
+  const goalString = JSON.stringify(goal);
+
+  // copy the string to the clipboard
+  navigator.clipboard.writeText(goalString);
+
+  // display a copied message
+  const copiedMessage = document.createElement("p");
+  copiedMessage.classList.add("copied");
+  copiedMessage.textContent = "Goal copied to clipboard!";
+  copiedMessage.setAttribute("aria-live", "polite");
+  document.getElementById("export-goal").appendChild(copiedMessage);
+
+  setTimeout(() => {
+    copiedMessage.style.opacity = 0;
+  }, 1500);
+
+  // remove the copied message after 2 seconds
+  setTimeout(() => {
+    copiedMessage.remove();
+  }, 3000);
 };
 
 /**
