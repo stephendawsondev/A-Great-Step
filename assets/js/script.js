@@ -136,8 +136,21 @@ const handleNextButtonClick = (event, currentSectionIndex) => {
   const currentSection =
     document.getElementsByTagName("section")[currentSectionIndex];
 
-  if (currentSection.id === "goal-form") return;
-
+  if (currentSection.id === "goal-form") {
+    const [isValid, error] = checkGoalRequiredFields();
+    if (!isValid) {
+      // display error message
+      const errorElement = document.createElement("p");
+      errorElement.classList.add("error");
+      errorElement.style.textAlign = "right";
+      errorElement.textContent = error;
+      currentSection.querySelector(".form-buttons").after(errorElement);
+      return;
+    } else {
+      // redirect the user to the goal page (not created yet)
+      window.location.href = "goal.html";
+    }
+  }
   // scroll to the next section
   const nextSection =
     document.getElementsByTagName("section")[currentSectionIndex + 1];
@@ -306,7 +319,36 @@ const handleExportGoal = () => {
 };
 
 /**
- * Handles the final submission of the form. This updates the goal
- * in LocalStorage and redirects the user to the goal page.
+ * Checks the goal object in LocalStorage to ensure all required
+ * fields are complete. If not, it returns an array with 'false'
+ * and an error message.
  */
-const handleFinalSubmit = () => {};
+const checkGoalRequiredFields = () => {
+  // ensure all LocalStorage required fields are complete
+  const goalData = localStorage.getItem("goal");
+  const goal = JSON.parse(goalData);
+
+  if (
+    !goal["first-name"] ||
+    !goal["gender"] ||
+    !goal["email"] ||
+    !goal["age"] ||
+    !goal["weight"] ||
+    !goal["height"] ||
+    !goal["activity-level"] ||
+    !goal["target-weight"] ||
+    !goal["goal-date"]
+  )
+    return [
+      false,
+      "Some required fields are missing, please ensure to all fields out.",
+    ];
+
+  return [true, null];
+};
+
+/**
+ * Calculates the details for the users goal and
+ * displays them on the goal page.
+ */
+const calculateGoalDetails = () => {};

@@ -110,7 +110,7 @@ fieldset {
 
 .error {
   color: #da0505;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   margin-top: 0.25em;
 }
 
@@ -280,7 +280,9 @@ h1 {
   margin-bottom: 1em;
 }
 
-a.back-home {
+a.back-home,
+a.generate-plan {
+  text-align: center;
   text-decoration: none;
 }
 
