@@ -20,6 +20,8 @@
 ## Images
 
 <a href="https://storyset.com/">Illustrations by Storyset</a>
+<a href="https://www.svgrepo.com/svg/510907/chevron-left-md">Left chevron from SVG Repo</a>
+<a href="https://www.svgrepo.com/svg/510910/chevron-right-md">Right chevron from SVG Repo</a>
 
 <!-- Reminders -->
 

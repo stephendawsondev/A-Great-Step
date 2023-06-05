@@ -88,6 +88,16 @@ h2 {
   transform: translateY(0.25em);
 }
 
+.btn svg {
+  width: 1em;
+  height: 1em;
+  stroke: #fefefe;
+}
+
+.chevron-right {
+  margin-left: -4px;
+}
+
 form label {
   display: block;
 }
