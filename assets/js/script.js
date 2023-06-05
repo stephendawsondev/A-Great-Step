@@ -9,10 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // loop through the sections and add event listeners to the buttons
   for (const [index, section] of sections.entries()) {
     if (section.id === "goal-results") {
+      calculateGoalDetails();
       const exportButton = section.querySelector("#export-goal");
       exportButton.addEventListener("click", handleExportGoal);
       return;
     }
+
     // select the next and back buttons
     const nextButton = section.querySelector(".next");
 
@@ -58,6 +60,17 @@ const checkForExistingGoal = () => {
   const goalData = localStorage.getItem("goal");
   if (goalData) {
     const goal = JSON.parse(goalData);
+    // Loop through fields and update fields with goal values
+    // for a better user experience
+    const formFields = [...document.querySelectorAll("input")];
+    for (const field of formFields) {
+      const fieldName = field.name;
+      const fieldValue = goal[fieldName];
+
+      if (fieldValue) {
+        field.value = fieldValue;
+      }
+    }
   } else {
     // Goal doesn't exist yet, create an empty array in LocalStorage
     localStorage.setItem("goal", JSON.stringify({}));
@@ -80,7 +93,8 @@ const handleImportSubmit = (event) => {
     // Update the goal object in LocalStorage
     const goal = JSON.parse(textareaValue);
     localStorage.setItem("goal", JSON.stringify(goal));
-    // Redirect the user to the goal page (not created yet)
+    // TODO - See if I want an automatic redirect or a button to click:
+    // Redirect the user to the goal page
     // window.location.href = "goal.html";
 
     // Clear the textarea after submission
@@ -148,7 +162,7 @@ const handleNextButtonClick = (event, currentSectionIndex) => {
       return;
     } else {
       // redirect the user to the goal page (not created yet)
-      window.location.href = "goal.html";
+      window.location.href = "walking-goal.html";
     }
   }
   // scroll to the next section
@@ -271,16 +285,26 @@ const updateGoalObject = (fields) => {
   const goal = JSON.parse(goalData);
 
   const updatedFields = {};
+  const daysAvailable = [];
   // loop through the fields and update the goal object
   for (const field of fields) {
-    const fieldName = field.name;
-    const fieldValue = field.value;
+    if (field.type === "radio" && !field.checked) {
+      continue;
+    } else {
+      updatedFields[field.name] = field.value;
+    }
 
-    updatedFields[fieldName] = fieldValue;
+    if (field.type === "checkbox" && !field.checked) {
+      continue;
+    } else {
+      daysAvailable.push(field.value);
+      continue;
+    }
   }
 
   // update the goal object with the new values
   const updatedGoal = { ...goal, ...updatedFields };
+  updatedGoal["days-available"] = daysAvailable;
 
   // update the goal object in LocalStorage
   localStorage.setItem("goal", JSON.stringify(updatedGoal));
@@ -335,20 +359,70 @@ const checkGoalRequiredFields = () => {
     !goal["age"] ||
     !goal["weight"] ||
     !goal["height"] ||
-    !goal["activity-level"] ||
+    !goal["walking-frequency"] ||
     !goal["target-weight"] ||
-    !goal["goal-date"]
+    !goal["target-date"]
   )
     return [
       false,
       "Some required fields are missing, please ensure to all fields out.",
     ];
 
-  return [true, null];
+  return [true, goal];
 };
 
 /**
  * Calculates the details for the users goal and
  * displays them on the goal page.
  */
-const calculateGoalDetails = () => {};
+const calculateGoalDetails = () => {
+  const [isValid, result] = checkGoalRequiredFields();
+
+  if (!isValid) return;
+
+  // destructure goal object
+  const {
+    "first-name": firstName,
+    "last-name": lastName,
+    gender,
+    email,
+    age,
+    weight,
+    height,
+    "walking-frequency": activityLevel,
+    "days-available": daysAvailable,
+    "target-weight": targetWeight,
+    "target-date": goalDate,
+  } = result;
+
+  // select the elements to update
+  const goalHeading = document.getElementById("goal-results-heading");
+  const dateStart = document.querySelector(".date-start");
+  const dateEnd = document.querySelector(".date-end");
+  const daysBetween = document.querySelector(".time-remaining-days");
+  const weeksBetween = document.querySelector(".time-remaining-weeks");
+  const goalWeight = document.querySelector(".weight-to-lose");
+  const startingStepsPerDay = document.querySelector(
+    ".goal-details-text .steps-per-day"
+  );
+  const availableDays = document.querySelector(".available-days");
+  const startingPace = document.querySelector(".goal-details-text .pace");
+  const reducedStepsPerDay = document.querySelector(
+    ".increase-pace .steps-per-day"
+  );
+  const increasedPace = document.querySelector(".increase-pace .pace");
+
+  // days between today and goal date calculation
+  const today = new Date();
+  const goal = new Date(goalDate);
+
+  const timeInDays = Math.floor((goal - today) / (1000 * 60 * 60 * 24));
+  const timeInWeeks = Math.floor(timeInDays / 7);
+
+  goalHeading.textContent = `${firstName}'s walking plan!`;
+  dateStart.textContent = today.toLocaleDateString("en-GB");
+  dateEnd.textContent = goal.toLocaleDateString("en-GB");
+  daysBetween.textContent = `${timeInDays} days`;
+  weeksBetween.textContent = `(${timeInWeeks} weeks)`;
+  goalWeight.textContent = `${weight - targetWeight} kg`;
+};
