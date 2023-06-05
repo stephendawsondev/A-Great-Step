@@ -70,6 +70,18 @@ const checkForExistingGoal = () => {
       if (fieldValue) {
         field.value = fieldValue;
       }
+
+      if (fieldName === "days-available") {
+        for (const day of fieldValue) {
+          const dayCheckbox = document?.querySelector(`input[value="${day}"]`);
+          if (!dayCheckbox) continue;
+          dayCheckbox.checked = true;
+        }
+      }
+
+      if (field.type === "radio" && field.value === fieldValue) {
+        field.checked = true;
+      }
     }
   } else {
     // Goal doesn't exist yet, create an empty array in LocalStorage
@@ -288,18 +300,17 @@ const updateGoalObject = (fields) => {
   const daysAvailable = [];
   // loop through the fields and update the goal object
   for (const field of fields) {
-    if (field.type === "radio" && !field.checked) {
-      continue;
-    } else {
+    if (field.type === "radio" && field.checked) {
       updatedFields[field.name] = field.value;
-    }
-
-    if (field.type === "checkbox" && !field.checked) {
       continue;
-    } else {
+    } else if (field.type === "checkbox" && field.checked) {
       daysAvailable.push(field.value);
       continue;
+    } else if (field.type === "checkbox" && !field.checked) {
+      continue;
     }
+
+    updatedFields[field.name] = field.value;
   }
 
   // update the goal object with the new values
@@ -365,7 +376,7 @@ const checkGoalRequiredFields = () => {
   )
     return [
       false,
-      "Some required fields are missing, please ensure to all fields out.",
+      "Some required fields are missing, please ensure to fill all fields out.",
     ];
 
   return [true, goal];
@@ -411,6 +422,7 @@ const calculateGoalDetails = () => {
     ".increase-pace .steps-per-day"
   );
   const increasedPace = document.querySelector(".increase-pace .pace");
+  const numDaysAvailable = daysAvailable.length;
 
   // days between today and goal date calculation
   const today = new Date();
@@ -425,4 +437,5 @@ const calculateGoalDetails = () => {
   daysBetween.textContent = `${timeInDays} days`;
   weeksBetween.textContent = `(${timeInWeeks} weeks)`;
   goalWeight.textContent = `${weight - targetWeight} kg`;
+  availableDays.textContent = `(${numDaysAvailable} days per week)`;
 };
