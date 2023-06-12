@@ -27,9 +27,36 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.addEventListener("click", (event) => {
       handleNextButtonClick(event, index);
     });
+
+    if (section.id !== "landing-page" && section.id !== "goal-form") {
+      // handle tab keydown when on the next button
+      nextButton.addEventListener("keydown", (event) => {
+        if (event.key === "Tab" && !event.shiftKey) {
+          event.preventDefault();
+          handleNextButtonClick(event, index);
+          // focus on first input field of next section
+          const nextSection = sections[index + 1];
+          const nextInput = nextSection.querySelector("input");
+
+          nextInput.focus();
+        }
+      });
+    }
+
     if (backButton) {
       backButton.addEventListener("click", (event) => {
         handleBackButtonClick(event, index);
+      });
+    }
+
+    // add keydown event listener for enter on an input field
+    const inputFields = [...section.querySelectorAll("input")];
+    for (const field of inputFields) {
+      field.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          handleNextButtonClick(event, index);
+        }
       });
     }
   }
@@ -71,7 +98,7 @@ const checkForExistingGoal = () => {
         field.value = fieldValue;
       }
 
-      if (fieldName === "days-available") {
+      if (fieldValue && fieldName === "days-available") {
         for (const day of fieldValue) {
           const dayCheckbox = document?.querySelector(`input[value="${day}"]`);
           if (!dayCheckbox) continue;

@@ -71,6 +71,7 @@ h2 {
   display: inline-block;
   background-color: #4a9cbf;
   color: #fefefe;
+  outline-offset: 5px;
   border: none;
   border-radius: 0.25em;
   cursor: pointer;
