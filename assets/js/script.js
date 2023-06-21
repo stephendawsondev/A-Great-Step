@@ -395,18 +395,33 @@ const checkGoalRequiredFields = () => {
   if (
     !goal["first-name"] ||
     !goal["gender"] ||
-    !goal["email"] ||
     !goal["age"] ||
     !goal["weight"] ||
     !goal["height"] ||
     !goal["walking-frequency"] ||
     !goal["target-weight"] ||
     !goal["target-date"]
-  )
+  ) {
+    // Should not be needed, but if the user does
+    // manage to get to the final without completing
+    // the form, this will display an error message.
+    const missingFields = [];
+    if (!goal["first-name"]) missingFields.push("first name");
+    if (!goal["gender"]) missingFields.push("gender");
+    if (!goal["age"]) missingFields.push("age");
+    if (!goal["weight"]) missingFields.push("weight");
+    if (!goal["height"]) missingFields.push("height");
+    if (!goal["walking-frequency"]) missingFields.push("walking frequency");
+    if (!goal["target-weight"]) missingFields.push("target weight");
+    if (!goal["target-date"]) missingFields.push("target date");
+
+    const missingFieldsString = missingFields.join(", ");
+
     return [
       false,
-      "Some required fields are missing, please ensure to fill all fields out.",
+      `You are missing the following fields: ${missingFieldsString}.`,
     ];
+  }
 
   return [true, goal];
 };
