@@ -94,7 +94,7 @@ const checkForExistingGoal = () => {
       const fieldName = field.name;
       const fieldValue = goal[fieldName];
 
-      if (fieldValue) {
+      if (fieldValue && field.type !== "radio" && field.type !== "checkbox") {
         field.value = fieldValue;
       }
 
@@ -330,14 +330,16 @@ const updateGoalObject = (fields) => {
     if (field.type === "radio" && field.checked) {
       updatedFields[field.name] = field.value;
       continue;
+    } else if (field.type === "radio" && !field.checked) {
+      continue;
     } else if (field.type === "checkbox" && field.checked) {
       daysAvailable.push(field.value);
       continue;
     } else if (field.type === "checkbox" && !field.checked) {
       continue;
+    } else {
+      updatedFields[field.name] = field.value;
     }
-
-    updatedFields[field.name] = field.value;
   }
 
   // update the goal object with the new values
