@@ -8,6 +8,8 @@
 - https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript (MDN Documentation on form validation)
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity (MDN Documentation on validity)
 - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live (MDN Documentation on aria-live)
+- https://pubmed.ncbi.nlm.nih.gov/15570150/ (Formula for calories burned from walking)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow (MDN Documentation on Math.pow)
 
 ## Tuts
 

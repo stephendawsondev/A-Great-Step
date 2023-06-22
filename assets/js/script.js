@@ -461,12 +461,18 @@ const calculateGoalDetails = () => {
     ".goal-details-text .steps-per-day"
   );
   const availableDays = document.querySelector(".available-days");
-  const startingPace = document.querySelector(".goal-details-text .pace");
+  const startingPace = document.querySelector(
+    ".goal-details-text .pace-per-hour"
+  );
   const reducedStepsPerDay = document.querySelector(
     ".increase-pace .steps-per-day"
   );
-  const increasedPace = document.querySelector(".increase-pace .pace");
+  const increasedPace = document.querySelector(".increase-pace .pace-per-hour");
+
+  // days available to walk per week
   const numDaysAvailable = daysAvailable.length;
+
+  const weightToLose = weight - targetWeight;
 
   // days between today and goal date calculation
   const today = new Date();
@@ -475,6 +481,19 @@ const calculateGoalDetails = () => {
   const timeInDays = Math.floor((goal - today) / (1000 * 60 * 60 * 24));
   const timeInWeeks = Math.floor(timeInDays / 7);
 
+  let walkingPace;
+  let increasedPaceValue;
+  if (activityLevel === "low") {
+    walkingPace = 3;
+    increasedPaceValue = 5;
+  } else if (activityLevel === "medium") {
+    walkingPace = 5;
+    increasedPaceValue = 7;
+  } else {
+    walkingPace = 7;
+    increasedPaceValue = 9;
+  }
+
   goalHeading.textContent = `${firstName}'s walking plan!`;
   dateStart.textContent = today.toLocaleDateString("en-GB");
   dateEnd.textContent = goal.toLocaleDateString("en-GB");
@@ -482,4 +501,44 @@ const calculateGoalDetails = () => {
   weeksBetween.textContent = `(${timeInWeeks} weeks)`;
   goalWeight.textContent = `${weight - targetWeight} kg`;
   availableDays.textContent = `(${numDaysAvailable} days per week)`;
+  startingPace.textContent = `${walkingPace}km`;
+  increasedPace.textContent = `${increasedPaceValue}km`;
+
+  const heightInMeters = height / 100;
+  const caloriesToBurn = weightToLose * 7700;
+  const numDaysToBurn = numDaysAvailable * timeInWeeks;
+  const caloriesToBurnPerDay = (caloriesToBurn / numDaysToBurn).toFixed(0);
+
+  // Calories burned per minute walking =
+  // (0.035 * body weight in kg) +
+  // ((Velocity in m/s ^ 2) / Height in m))
+  // * 0.029 * body weight in kg
+  const caloriesBurnedPerMinute = (pace) => {
+    const paceInMetersPerSecond = pace / 3.6;
+    return (
+      0.035 * weight +
+      (Math.pow(paceInMetersPerSecond, 2) / heightInMeters) * 0.029 * weight
+    ).toFixed(2);
+  };
+
+  const calculateStepsPerDay = (pace) => {
+    const caloriesBurned = Number(caloriesBurnedPerMinute(pace)).toFixed(2);
+    const timeRequiredPerDayInMinutes = caloriesToBurnPerDay / caloriesBurned;
+    const paceInMetersPerSecond = pace / 3.6;
+    // use average stride length
+    const strideLength = 0.74;
+    // Calculate steps per minute based on pace and stride length
+    const stepsPerMinute = paceInMetersPerSecond / strideLength;
+    // Calculate steps required per day
+    const stepsRequiredPerDay = timeRequiredPerDayInMinutes / stepsPerMinute;
+
+    return stepsRequiredPerDay.toFixed(0);
+  };
+
+  startingStepsPerDay.textContent = `${
+    calculateStepsPerDay(walkingPace) * 100
+  } steps`;
+  reducedStepsPerDay.textContent = `${
+    calculateStepsPerDay(increasedPaceValue) * 100
+  } steps`;
 };
