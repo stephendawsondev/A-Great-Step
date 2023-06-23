@@ -132,9 +132,8 @@ const handleImportSubmit = (event) => {
     // Update the goal object in LocalStorage
     const goal = JSON.parse(textareaValue);
     localStorage.setItem("goal", JSON.stringify(goal));
-    // TODO - See if I want an automatic redirect or a button to click:
-    // Redirect the user to the goal page
-    // window.location.href = "goal.html";
+    // Redirect the user to the walking-goal page
+    window.location.href = "walking-goal.html";
 
     // Clear the textarea after submission
     importTextarea.value = "";

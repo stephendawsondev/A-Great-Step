@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;700&family=Exo:ital,wght@0,400;0,700;1,500&family=Lobster+Two&display=swap");
 
 /* Global styles */
+:root {
+  font-size: 20px;
+}
 body,
 html {
   margin: 0;
@@ -107,6 +110,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="date"] {
+  font-size: 1rem;
   line-height: 2.25;
   width: 100%;
   font-family: "Catamaran", sans-serif;
