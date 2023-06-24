@@ -1309,7 +1309,7 @@
 						<fieldset>
 							<legend>Walking frequency</legend>
 							<div class="walking-level-cards">
-								<label>
+								<div class="card">
 									<div class="image-container">
 										<svg role="img" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -1338,11 +1338,13 @@
 												fill="black" />
 										</svg>
 									</div>
-									<input id="walk-a-little" value="walk-a-little" type="radio" name="walking-frequency" required />
-									I walk a little
-									<p>(1-2 times a week)</p>
-								</label>
-								<label>
+									<div class="content-container">
+										<input id="walk-a-little" value="walk-a-little" type="radio" name="walking-frequency" required />
+										<label for="walk-a-little">I walk a little</label>
+										<p>(1-2 times a week)</p>
+									</div>
+								</div>
+								<div class="card">
 									<div class="image-container">
 										<svg role="img" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -1383,11 +1385,13 @@
 												fill="black" />
 										</svg>
 									</div>
-									<input id="walk-often" value="walk-often" type="radio" name="walking-frequency" />
-									I walk often
-									<p>(3-4 times a week)</p>
-								</label>
-								<label>
+									<div class="content-container">
+										<input id="walk-often" value="walk-often" type="radio" name="walking-frequency" />
+										<label for="walk-often">I walk often</label>
+										<p>(3-4 times a week)</p>
+									</div>
+								</div>
+								<div class="card">
 									<div class="image-container">
 										<svg role="img" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path
@@ -1464,10 +1468,12 @@
 												fill="black" />
 										</svg>
 									</div>
-									<input id="walk-a-lot" value="walk-a-lot" type="radio" name="walking-frequency" />
-									I walk a lot
-									<p>(5+ times per week)</p>
-								</label>
+									<div class="content-container">
+										<input id="walk-a-lot" value="walk-a-lot" type="radio" name="walking-frequency" />
+										<label for="walk-a-lot">I walk a lot</label>
+										<p>(5+ times per week)</p>
+									</div>
+								</div>
 							</div>
 						</fieldset>
 						<div class="form-buttons">
