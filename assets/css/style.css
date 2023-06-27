@@ -28,7 +28,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: auto;
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
 }
 
 section {
@@ -114,6 +114,7 @@ input[type="date"] {
   line-height: 2.25;
   width: 100%;
   font-family: "Catamaran", sans-serif;
+  padding-left: 0.5em;
 }
 
 fieldset {
@@ -186,13 +187,7 @@ h1 {
 }
 
 .three-fields {
-  display: flex;
-  justify-content: space-between;
   margin-top: 0.5em;
-}
-
-.three-fields .field-container {
-  width: 30%;
 }
 
 .form-buttons {
@@ -212,6 +207,14 @@ h1 {
   align-items: center;
   text-align: center;
   margin-top: 1em;
+}
+
+.walking-level-cards .card + .card {
+  margin-top: 1em;
+}
+
+.walking-level-cards label {
+  font-size: 0.8rem;
 }
 
 .walking-level-cards .image-container svg {
@@ -236,7 +239,9 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
   outline: 0.25em solid #4a9cbf;
   outline-offset: 0.25em;
@@ -357,6 +362,10 @@ a.generate-plan {
     flex-direction: row;
   }
 
+  .walking-level-cards .card + .card {
+    margin-top: 0;
+  }
+
   .walking-level-cards label svg {
     width: 80%;
   }
@@ -389,6 +398,10 @@ a.generate-plan {
   section .content-container {
     margin-left: 2em;
     width: 65%;
+  }
+
+  .walking-level-cards .content-container {
+    margin: 0 auto;
   }
 
   h2,
@@ -427,6 +440,15 @@ a.generate-plan {
 
   .two-fields .field-container {
     width: 48%;
+  }
+
+  .three-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .three-fields .field-container {
+    width: 30%;
   }
 
   /* Activity level */
