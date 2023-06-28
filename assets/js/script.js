@@ -393,10 +393,10 @@ const checkGoalRequiredFields = () => {
 
   if (
     !goal["first-name"] ||
-    !goal["gender"] ||
-    !goal["age"] ||
-    !goal["weight"] ||
-    !goal["height"] ||
+    !goal.gender ||
+    !goal.age ||
+    !goal.weight ||
+    !goal.height ||
     !goal["walking-frequency"] ||
     !goal["target-weight"] ||
     !goal["target-date"]
@@ -406,10 +406,10 @@ const checkGoalRequiredFields = () => {
     // the form, this will display an error message.
     const missingFields = [];
     if (!goal["first-name"]) missingFields.push("first name");
-    if (!goal["gender"]) missingFields.push("gender");
-    if (!goal["age"]) missingFields.push("age");
-    if (!goal["weight"]) missingFields.push("weight");
-    if (!goal["height"]) missingFields.push("height");
+    if (!goal.gender) missingFields.push("gender");
+    if (!goal.age) missingFields.push("age");
+    if (!goal.weight) missingFields.push("weight");
+    if (!goal.height) missingFields.push("height");
     if (!goal["walking-frequency"]) missingFields.push("walking frequency");
     if (!goal["target-weight"]) missingFields.push("target weight");
     if (!goal["target-date"]) missingFields.push("target date");
