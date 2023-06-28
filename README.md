@@ -203,15 +203,36 @@ A Great Step is a web app that allows users to set a step goal with a particular
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
-- [W3C Markup Validator:](https://validator.w3.org/)
-  <details><summary>Homepage (Click to expand)</summary>
-  <br>
-  <img src="assets/images/readme-images/accessibility-images/landing.png">
-  </details>
+[W3C Markup Validator:](https://validator.w3.org/)
 
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) -
+<details><summary>Homepage (Click to expand)</summary>
+    <br>
+    <img src="assets/images/readme-images/validation-images/homepage.png">
+</details>
+  
+<br>
 
-- [JSHint](https://jshint.com/) -
+<details><summary>Walking Goal (Click to expand)</summary>
+    <br>
+    <img src="assets/images/readme-images/validation-images/walking-goal.png">
+</details>
+
+<br>
+
+<details><summary>404 page (Click to expand)</summary>
+    <br>
+    <img src="assets/images/readme-images/validation-images/404.png">
+</details>
+
+<br>
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/):
+
+[CSS Homepage validation results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephendawsondev.github.io%2FA-Great-Step%2F&profile=css3svg&usermedium=all)
+
+ <br>
+ 
+ [JSHint](https://jshint.com/):
 
 ### Testing Performance
 
@@ -222,7 +243,7 @@ I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app
 <details><summary>Homepage (Click to expand)</summary>
   <br>
   <img src="assets/images/readme-images/performance/mobile/homepage.png">
-  </details>
+</details>
 
 #### Desktop:
 
