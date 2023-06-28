@@ -98,6 +98,10 @@ h2 {
   stroke: #fefefe;
 }
 
+.chevron {
+  font-size: 1rem;
+}
+
 .chevron-right {
   margin-left: -4px;
 }
@@ -346,9 +350,14 @@ a.generate-plan {
 
 .copied {
   position: absolute;
-  bottom: -110%;
+  top: -115%;
+  left: 0;
   opacity: 1;
+  padding: 0.25em;
+  border-radius: 10px;
   color: #4a9cbf;
+  box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   font-size: 0.75rem;
   margin-top: 0.25em;
   transition: opacity 0.5s ease-in-out;
@@ -481,12 +490,5 @@ a.generate-plan {
   /* Goal results page */
   #goal-results {
     text-align: left;
-  }
-
-  .copied {
-    bottom: initial;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -110%;
   }
 }
