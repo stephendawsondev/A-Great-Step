@@ -110,11 +110,66 @@ A Great Step is a web app that allows users to set a step goal with a particular
 
 ### Site sections
 
-<details><summary>Landing page initial section (Click to expand)</summary>
+<br>
+<details><summary>Landing section initial section (Click to expand)</summary>
     <br>
-    The landing page section...
+    The landing section is the first thing the user sees. Straight away they can see that the app is fitness-related. They have the option to create a goal here, or import an existing goal.  
     <br>
-    <!-- <img src="assets/images/readme-images/features/landing.png"> -->
+    <br>
+    <img src="assets/images/readme-images/features/landing.png">
+</details>
+<br>
+<details><summary>Landing section - Import a goal (Click to expand)</summary>
+    <br>
+    By clicking on the "Import goal" button on the landing page, the user is presented with a text input where they can add their previously export JSON goal data. 
+    <br>
+    <br>
+    <img src="assets/images/readme-images/features/import-goal.png">
+</details>
+
+<br>
+<details><summary>Your details (Click to expand)</summary>
+    <br>
+    The next section on the homepage that the user can scroll to is the "Your details" section, where they can input their personal details such as name, email and weight.
+    <br>
+    <br>
+    <img src="assets/images/readme-images/features/your-details.png">
+</details>
+
+<br>
+<details><summary>Your activity level (Click to expand)</summary>
+    <br>
+    The activity level section is to gauge how active the user is, which is used in the calculation later. I made the decision to assign each level of activity to a value so that the user doesn't have to input a number. They just need to select the level of activity that best describes them.
+    <br>
+    <br>
+    <img src="assets/images/readme-images/features/activity-level.png">
+</details>
+
+<br>
+<details><summary>Your goal (Click to expand)</summary>
+    <br>
+    The final section on the homepage gives the user the opportunity to input what weight they want to be, when they want to reach that weight and how many days a week they have available to exercise. This data is used in the final calculation too. When they click "Generate plan", it takes them to the walking plan page.
+    <br>
+    <br>
+    <img src="assets/images/readme-images/features/your-goal.png">
+</details>
+
+<br>
+<details><summary>Walking plan (Click to expand)</summary>
+    <br>
+    The walking plan page is customised to the user and their goal. In this case, it gives me my name and tells me how many steps I need to walk each day to reach my goal. The date range is calculated from today's date to the user's target date.
+    <br>
+    <br>
+    <img src="assets/images/readme-images/features/walking-plan.png">
+</details>
+
+<br>
+<details><summary>Walking plan - Export goal (Click to expand)</summary>
+    <br>
+    By clicking the "Export goal" button, the user's JSON data is saved to their clipboard. With that, they can send it to themselves and then import it on another device. When the button is clicked, the user gets some feedback that the button has been clicked by displaying a small popup.
+    <br>
+    <br>
+    <img src="assets/images/readme-images/features/export-goal.png">
 </details>
 
 <br>
