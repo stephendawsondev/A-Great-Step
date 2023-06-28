@@ -437,10 +437,6 @@ const calculateGoalDetails = () => {
   // destructure goal object
   const {
     "first-name": firstName,
-    "last-name": lastName,
-    gender,
-    email,
-    age,
     weight,
     height,
     "walking-frequency": activityLevel,

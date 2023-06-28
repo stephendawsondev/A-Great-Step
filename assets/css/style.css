@@ -218,7 +218,7 @@ h1 {
 }
 
 .walking-level-cards label {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .walking-level-cards .image-container svg {
@@ -467,6 +467,10 @@ a.generate-plan {
   /* Activity level */
   .walking-level-cards .image-container {
     width: 75%;
+  }
+
+  .walking-level-cards label {
+    font-size: 0.8rem;
   }
 
   /* Goal details */
