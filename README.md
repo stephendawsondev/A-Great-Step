@@ -4,7 +4,7 @@
 
 A Great Step is a web app that allows users to set a step goal with a particular target date in mind. The user inputs their current activity level, age, gender, weight height and target weight, and they input when they want to acheive that weight. The app generates a plan that can be exported as JSON and imported on other devices.
 
-<h2 align="center"><img src="assets/images/readme-images/">Different device placeholder</h2>
+<div align="center"><img src="assets/images/readme-images/different-devices.png"></div>
 
 ## User Experience (UX)
 
@@ -12,12 +12,20 @@ A Great Step is a web app that allows users to set a step goal with a particular
 
 - #### First Time Visitor Goals
 
-  1. As a first time visitor...
-  2. As a first time visitor...
+  1. As a first time visitor, I want to be able to create easily navigate the site.
+  2. As a first time visitor, I want receive errors if I input invalid data.
+  3. As a first time visitor, I want to be able to export my goal to use later.
+  4. As a first time visitor, I want to understand the purpose of the app.
 
 - #### Returning Visitor Goals
 
+  1. As a returning visitor, I want to be able to import my goal from another device.
+  2. As a returning visitor, I want to be able to edit my goal.
+
 - #### Frequent User Goals
+  1. As a frequent user, I want to be able to view my updated goal timeframe.
+  2. As a frequent user, I want to be able to make updates to my goal.
+
 <br>
 
 ### Design
