@@ -28,7 +28,6 @@ body {
   width: 100%;
   height: 100vh;
   overflow: auto;
-  scroll-snap-type: y mandatory;
 }
 
 section {
@@ -36,7 +35,6 @@ section {
   overflow: scroll;
   align-items: center;
   display: flex;
-  scroll-snap-align: start;
 }
 
 section * {
