@@ -478,10 +478,10 @@ const calculateGoalDetails = () => {
 
   let walkingPace;
   let increasedPaceValue;
-  if (activityLevel === "low") {
+  if (activityLevel === "walk-a-little") {
     walkingPace = 3;
     increasedPaceValue = 5;
-  } else if (activityLevel === "medium") {
+  } else if (activityLevel === "walk-often") {
     walkingPace = 5;
     increasedPaceValue = 7;
   } else {
