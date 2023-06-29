@@ -233,7 +233,12 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
  <br>
  
  [JSHint](https://jshint.com/):
+ <details><summary>JSHint Code Validation (Click to expand)</summary>
+    <br>
+    <img src="assets/images/readme-images/validation-images/jshint.png">
+</details>
 
+<br>
 ### Testing Performance
 
 I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app's speed, best practices and accessibility. Here are the results:
