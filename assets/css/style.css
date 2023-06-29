@@ -437,11 +437,6 @@ a.generate-plan {
 
 @media screen and (min-width: 900px) {
   /* Global styles */
-  section {
-    display: flex;
-    align-items: center;
-  }
-
   .container {
     display: flex;
     min-height: 75%;
