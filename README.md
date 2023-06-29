@@ -6,7 +6,8 @@ A Great Step is a web app that allows users to set a step goal with a particular
 
 <div align="center"><img src="assets/images/readme-images/different-devices.png"></div>
 
-## User Experience (UX)
+<details><summary style="font-size: 1.5rem">User Experience (Click to expand)</summary>
+<br>
 
 ### User stories
 
@@ -95,10 +96,10 @@ A Great Step is a web app that allows users to set a step goal with a particular
 <details><summary>Mobile 404 page (Click to expand)</summary>
     <img src="assets/images/readme-images/wireframes/mobile/404.png">
 </details>
-
 <br>
-
-## Features
+</details>
+<details><summary style="font-size: 1.5rem">Features (Click to expand)</summary>
+<br>
 
 - Responsive on all device sizes
 - Clean and user-friendly interface design
@@ -171,10 +172,10 @@ A Great Step is a web app that allows users to set a step goal with a particular
     <br>
     <img src="assets/images/readme-images/features/export-goal.png">
 </details>
-
 <br>
-
-## Technologies Used
+</details>
+<details><summary style="font-size: 1.5rem">Technologies used (Click to expand)</summary>
+<br>
 
 ### Languages Used
 
@@ -198,8 +199,10 @@ A Great Step is a web app that allows users to set a step goal with a particular
    - Balsamiq was used to create the [wireframes](assets/images/readme-images/wireframes) during the design process.
 7. [SVG Repo:](https://www.svgrepo.com/)
    - SVG Repo was used to create the footprint images for the activity level section.
-
-## Testing
+   <br>
+   </details>
+      <details><summary style="font-size: 1.5rem">Testing (Click to expand)</summary>
+   <br>
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
@@ -281,30 +284,55 @@ I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app
 
 ### Testing User Stories from User Experience (UX) Section
 
-- #### First Time Visitor Goals
+<br>
 
-  1. As a First Time Visitor...
+#### **First Time Visitor Goals**
 
-     1. How acheived
+<br>
 
-  2. As a First Time Visitor...
+> As a first time visitor, I want to be able to create easily navigate the site.
 
-     1. How acheived
+On landing on the site, the user is presented with two large buttons, which allow them to either import a goal or create a new one. The limitation of choice means the user can easily decide what they want to do. They can also scroll down to see the other sections of the site. If they visit a page that doesn't exist, they have a button to redirect them back to the homepage.
 
-- #### Returning Visitor Goals
+> As a first time visitor, I want receive errors if I input invalid data.
 
-  1. As a Returning Visitor...
+If the user inputs invalid data and tries to progress to the next section, the inputs will be validated and the user is presented with a clear error explaining what they need to do.
 
-     1. ...
+> As a first time visitor, I want to be able to export my goal to use later.
 
-  2. As a Returning Visitor...
+On the Walking Goal page, the user only has to click the "Export goal" button to copy the JSON data to their clipboard. A popup appears to let them know that the data has been copied to the clipboard.
 
-     1. ...
+> As a first time visitor, I want to understand the purpose of the app.
 
-- #### Frequent User Goals
+The app's name is "A Great Step" and the pun already indicates that the app is related to walking. There is also a subtitle that helps to explain the purpose of the app. The images used on each section also help to convey the purpose of the app.
 
-  1. As a Frequent User ...
-     1. ...
+<br>
+
+#### **Returning Visitor Goals**
+
+<br>
+
+> As a returning visitor, I want to be able to import my goal from another device.
+
+On the homepage, when the user clicks "Import a goal", they are presented with a popup that instructs them to input the JSON data for an existing goal. When they click "Import", the data is validated and if it is valid, the user is redirected to the Walking Goal page.
+
+> As a returning visitor, I want to be able to edit my goal.
+
+When the user imports a goal, they are redirected to the Walking Goal page. Here, they can click the "Back to homepage" button to be redirected to the homepage where they can edit their goal. When they originally land on the site, their goal fields are also pulled from Local Storage, and they are updated as the user progresses through each section.
+
+<br>
+
+#### **Frequent User Goals**
+
+> As a frequent user, I want to be able to view my updated goal timeframe.
+
+When the user updates their goal, the timeframe is updated on the Walking Goal page. The date range is calculated from today's date to the user's target date.
+
+> As a frequent user, I want to be able to make updates to my goal.
+
+In the "Goal details" section, the user can update the target date, weight and how many days they have available to exercise. When they click "Generate plan", the plan is updated with the new data.
+
+<br>
 
 ### Further Testing
 
@@ -313,11 +341,22 @@ I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app
 - Family members were asked to review the app and documentation to point out any bugs and/or user experience issues.
 - I made sure that I was able to use the app on the keyboard for accessibility testing.
 
-### Bugs encountered
-
 <br>
 
-## Deployment
+### Bugs encountered
+
+1. As sections have a 100vh height, the sections beneath it were overlapping - I needed to make the min-height 100vh instead. However, that caused the snap effect to break on mobile. Still working on a fix for this.
+2. When importing a goal, if there is already an error message displayed and invalid json is entered, another error message is added.
+3. When clicking the "next" or "previous" buttons, I was getting a 405 error. I had to prevent the default form submission behaviour to fix this.
+4. When removing radio button error, it only gets removed if the user clicks the first option. If they click another option, the error remains. I will try to fix this by adding a for loop to check all radio buttons.
+5. When updating form fields in local stoage, the last radio button is always selected. Also, all checkbox values are added. I think I will add a "checked" property so that only those that are checked are added. For the radio buttons, I will add a "selected" property.
+6. For the final validation, returning false and the error message appears to be disabling the ability to update the object in Local Storage. It shouldn't really be an issue since the user should not be able to get to that step without fixing the errors along the way. If I have time, I will come back and try to apply a fix.
+7. When a user clicks "back" on a section and if there is an error on the section they are clicking from, it prevents the next button of the section they are now on from working.
+8. On Firefox, the days of the week checkboxes are not working. I think this is due to the `:has` selector not being supported in Firefox. I will need to find a workaround for that.
+
+</details>
+
+<details><summary style="font-size: 1.5rem">Deployment (Click to expand)</summary>
 
 ### GitHub Pages
 
@@ -364,7 +403,9 @@ $ git clone https://github.com/stephendawsondev/A-Great-Step
 
 [Click here to retrieve pictures for some of the buttons and more detailed explanations of the cloning process](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop).
 
-## Credits
+</details>
+<details><summary style="font-size: 1.5rem">Credits (Click to expand)</summary>
+<br>
 
 ### Code
 
@@ -396,14 +437,4 @@ $ git clone https://github.com/stephendawsondev/A-Great-Step
 - My Mentor for continuous helpful feedback.
 - My Code Institute team for feedback on the project.
 - The Code Institute #peer-code-review channel for feedback.
-
-## Bugs
-
-1. As sections have a 100vh height, the sections beneath it were overlapping - I needed to make the min-height 100vh instead. However, that caused the snap effect to break on mobile. Still working on a fix for this.
-2. When importing a goal, if there is already an error message displayed and invalid json is entered, another error message is added.
-3. When clicking the "next" or "previous" buttons, I was getting a 405 error. I had to prevent the default form submission behaviour to fix this.
-4. When removing radio button error, it only gets removed if the user clicks the first option. If they click another option, the error remains. I will try to fix this by adding a for loop to check all radio buttons.
-5. When updating form fields in local stoage, the last radio button is always selected. Also, all checkbox values are added. I think I will add a "checked" property so that only those that are checked are added. For the radio buttons, I will add a "selected" property.
-6. For the final validation, returning false and the error message appears to be disabling the ability to update the object in Local Storage. It shouldn't really be an issue since the user should not be able to get to that step without fixing the errors along the way. If I have time, I will come back and try to apply a fix.
-7. When a user clicks "back" on a section and if there is an error on the section they are clicking from, it prevents the next button of the section they are now on from working.
-8. On Firefox, the days of the week checkboxes are not working. I think this is due to the `:has` selector not being supported in Firefox. I will need to find a workaround for that.
+</details>
