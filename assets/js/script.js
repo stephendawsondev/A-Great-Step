@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const importForm = document.getElementById("import-form");
   importForm.addEventListener("submit", handleImportSubmit);
+
+  const closeDialogButton = document.querySelector("button.btn.close");
+  closeDialogButton.addEventListener("click", handleCloseDialog);
 });
 
 /**
@@ -157,6 +160,15 @@ const handleImportSubmit = (event) => {
     // log the error to the console
     console.error(error);
   }
+};
+
+/**
+ * Handles the closing of the dialog.
+ */
+const handleCloseDialog = (event) => {
+  event.preventDefault();
+  const dialog = document.getElementsByTagName("dialog")[0];
+  dialog.close();
 };
 
 /**
