@@ -6,7 +6,7 @@ A Great Step is a web app that allows users to set a step goal with a particular
 
 <div align="center"><img src="assets/images/readme-images/different-devices.png"></div>
 
-<details><summary style="font-size: 1.5rem">User Experience (Click to expand)</summary>
+<details><summary style="font-size: 20px">User Experience (Click to expand)</summary>
 <br>
 
 ### User stories
@@ -98,7 +98,7 @@ A Great Step is a web app that allows users to set a step goal with a particular
 </details>
 <br>
 </details>
-<details><summary style="font-size: 1.5rem">Features (Click to expand)</summary>
+<details><summary style="font-size: 20px">Features (Click to expand)</summary>
 <br>
 
 - Responsive on all device sizes
@@ -174,7 +174,7 @@ A Great Step is a web app that allows users to set a step goal with a particular
 </details>
 <br>
 </details>
-<details><summary style="font-size: 1.5rem">Technologies used (Click to expand)</summary>
+<details><summary style="font-size: 20px">Technologies used (Click to expand)</summary>
 <br>
 
 ### Languages Used
@@ -201,7 +201,7 @@ A Great Step is a web app that allows users to set a step goal with a particular
    - SVG Repo was used to create the footprint images for the activity level section.
    <br>
    </details>
-      <details><summary style="font-size: 1.5rem">Testing (Click to expand)</summary>
+      <details><summary style="font-size: 20px">Testing (Click to expand)</summary>
    <br>
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
@@ -356,7 +356,7 @@ In the "Goal details" section, the user can update the target date, weight and h
 
 </details>
 
-<details><summary style="font-size: 1.5rem">Deployment (Click to expand)</summary>
+<details><summary style="font-size: 20px">Deployment (Click to expand)</summary>
 
 ### GitHub Pages
 
@@ -404,7 +404,7 @@ $ git clone https://github.com/stephendawsondev/A-Great-Step
 [Click here to retrieve pictures for some of the buttons and more detailed explanations of the cloning process](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop).
 
 </details>
-<details><summary style="font-size: 1.5rem">Credits (Click to expand)</summary>
+<details><summary style="font-size: 20px">Credits (Click to expand)</summary>
 <br>
 
 ### Code
