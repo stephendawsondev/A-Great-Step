@@ -225,7 +225,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 </details>
 
 <br>
-
+<br>
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/):
 
 [CSS Homepage validation results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephendawsondev.github.io%2FA-Great-Step%2F&profile=css3svg&usermedium=all)
@@ -239,6 +239,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 </details>
 
 <br>
+<br>
+
 ### Testing Performance
 
 I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app's speed, best practices and accessibility. Here are the results:
@@ -250,12 +252,32 @@ I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app
   <img src="assets/images/readme-images/performance/mobile/homepage.png">
 </details>
 
+<details><summary>404 page (Click to expand)</summary>
+  <br>
+  <img src="assets/images/readme-images/performance/mobile/404.png">
+</details>
+
+<details><summary>Walking Goal (Click to expand)</summary>
+  <br>
+  <img src="assets/images/readme-images/performance/mobile/walking-goal.png">
+</details>
+<br>
+
 #### Desktop:
 
 <details><summary>Homepage (Click to expand)</summary>
     <br>
     <img src="assets/images/readme-images/performance/desktop/homepage.png">
 </details>
+<details><summary>404 page (Click to expand)</summary>
+    <br>
+    <img src="assets/images/readme-images/performance/desktop/404.png">
+</details>
+<details><summary>Walking Goal (Click to expand)</summary>
+    <br>
+    <img src="assets/images/readme-images/performance/desktop/walking-goal.png">
+</details>
+<br>
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -292,6 +314,8 @@ I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app
 - I made sure that I was able to use the app on the keyboard for accessibility testing.
 
 ### Bugs encountered
+
+<br>
 
 ## Deployment
 
