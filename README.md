@@ -13,8 +13,8 @@ A Great Step is a web app that allows users to set a step goal with a particular
 
 - #### First Time Visitor Goals
 
-  1. As a first time visitor, I want to be able to create easily navigate the site.
-  2. As a first time visitor, I want receive errors if I input invalid data.
+  1. As a first time visitor, I want to be able to easily navigate the site.
+  2. As a first time visitor, I want to receive errors if I input invalid data.
   3. As a first time visitor, I want to be able to export my goal to use later.
   4. As a first time visitor, I want to understand the purpose of the app.
 
@@ -242,7 +242,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 </details>
 
 <br>
-<br>
 
 ### Testing Performance
 
@@ -290,11 +289,11 @@ I used the [Pagespeed Insights tool](https://pagespeed.web.dev/) to check my app
 
 <br>
 
-> As a first time visitor, I want to be able to create easily navigate the site.
+> As a first time visitor, I want to be able to easily navigate the site.
 
-On landing on the site, the user is presented with two large buttons, which allow them to either import a goal or create a new one. The limitation of choice means the user can easily decide what they want to do. They can also scroll down to see the other sections of the site. If they visit a page that doesn't exist, they have a button to redirect them back to the homepage.
+On landing on the site, the user is presented with two large buttons, which allow them to either import a goal or create a new one. Limited choice means the user can easily decide what they want to do. They can also scroll down to see the other sections of the site. If they visit a page that doesn't exist, they have a button to redirect them back to the homepage.
 
-> As a first time visitor, I want receive errors if I input invalid data.
+> As a first time visitor, I want to receive errors if I input invalid data.
 
 If the user inputs invalid data and tries to progress to the next section, the inputs will be validated and the user is presented with a clear error explaining what they need to do.
 
@@ -304,7 +303,7 @@ On the Walking Goal page, the user only has to click the "Export goal" button to
 
 > As a first time visitor, I want to understand the purpose of the app.
 
-The app's name is "A Great Step" and the pun already indicates that the app is related to walking. There is also a subtitle that helps to explain the purpose of the app. The images used on each section also help to convey the purpose of the app.
+The app's name is "A Great Step" and the pun already indicates that the app is related to walking. There is also a subtitle that helps to explain the purpose of the app. The images used in each section also help to convey the purpose of the app.
 
 <br>
 
@@ -339,7 +338,7 @@ In the "Goal details" section, the user can update the target date, weight and h
 - The app was tested on Google Chrome, Mozilla Firefox and Safari browsers.
 - The app was viewed on a variety of devices such as Desktop, Laptop and iPhone 8 and 11.
 - Family members were asked to review the app and documentation to point out any bugs and/or user experience issues.
-- I made sure that I was able to use the app on the keyboard for accessibility testing.
+- I made sure to test the app's accessibility using keyboard.
 
 <br>
 
