@@ -228,7 +228,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 </details>
 
 <br>
-<br>
+
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/):
 
 [CSS Homepage validation results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephendawsondev.github.io%2FA-Great-Step%2F&profile=css3svg&usermedium=all)
@@ -345,15 +345,57 @@ In the "Goal details" section, the user can update the target date, weight and h
 
 ### Bugs encountered
 
-1. As sections have a 100vh height, the sections beneath it were overlapping - I needed to make the min-height 100vh instead. However, that caused the snap effect to break on mobile. Still working on a fix for this.
-2. When importing a goal, if there is already an error message displayed and invalid json is entered, another error message is added.
-3. When clicking the "next" or "previous" buttons, I was getting a 405 error. I had to prevent the default form submission behaviour to fix this.
-4. When removing radio button error, it only gets removed if the user clicks the first option. If they click another option, the error remains. I will try to fix this by adding a for loop to check all radio buttons.
-5. When updating form fields in local stoage, the last radio button is always selected. Also, all checkbox values are added. I think I will add a "checked" property so that only those that are checked are added. For the radio buttons, I will add a "selected" property.
-6. For the final validation, returning false and the error message appears to be disabling the ability to update the object in Local Storage. It shouldn't really be an issue since the user should not be able to get to that step without fixing the errors along the way. If I have time, I will come back and try to apply a fix.
-7. When a user clicks "back" on a section and if there is an error on the section they are clicking from, it prevents the next button of the section they are now on from working.
-8. On Firefox, the days of the week checkboxes are not working. I think this is due to the `:has` selector not being supported in Firefox. I will need to find a workaround for that.
+<br>
 
+<table style="width: 100%;">
+  <tr>
+    <th style="text-align: left;">Bug</th>
+    <th style="text-align: center; width: 15%">Fixed (Y/N)</th>
+    <th style="text-align: left;">Additional comments</th>
+  </tr>
+  <tr>
+    <td style="text-align: left;">Overlapping sections on the homepage.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">Changed the sections to 100vh, which allowed for the section to take up the space it needed.</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">Duplicate "Invalid JSON" Error messages when importing JSON.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">I added a check in JavaScript to see if the error already existed. If it did, then another one wouldn't be added</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">Clicking the next or previous buttons create a 405 error.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">Since they were buttons inside a form, the default behaviour was to submit. I prevented the default event.</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">Clicking the next or previous buttons create a 405 error.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">Since they were buttons inside a form, the default behaviour was to submit. I prevented the default event.</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">Radio button error is only removed when first option is selected.</td>
+    <td style="text-align: center; width: 15%">N</td>
+    <td style="text-align: left;">When the error message is displayed, it is normally dismissed when the correct input is added, but for radio buttons, it is only dismissed when the first radio is selected. To fix it, I would need to loop through all the buttons to check if one option is selected, then dismiss the error.</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">When selecting the radio button, the value of the last radio button in the group is always passed instead of the selected one.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">When re-populating the values, I was accidentally overwriting the value of the selected input with the last value. I fixed the code so that it no longer happens.</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">If there is an error on one section of the homepage, it prevents the "Next" or "Generate plan" button from submitting, even if there isn't an error on their sections.</td>
+    <td style="text-align: center; width: 15%">N</td>
+    <td style="text-align: left;">This originally wasn't as serious an issue because the user was going to have to step through the form. However, now it is a pretty big bug, so I will need to update the logic so that the validation on applies to the button in a given section.</td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">In Firefox, the days of the week checkboxes were not being checked.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">I was using the :has selector and it is not supported in Firefox. I had to stop using the :has selector and restructure the code so that it now works.</td>
+  </tr>
+</table>
+
+<br>
 </details>
 
 <details><summary style="font-size: 20px">Deployment (Click to expand)</summary>
