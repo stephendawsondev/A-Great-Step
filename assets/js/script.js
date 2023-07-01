@@ -270,7 +270,15 @@ const handleFormValidation = (currentSectionIndex) => {
           const errorElement = document.createElement("p");
           errorElement.classList.add("error");
           errorElement.textContent = element.validationMessage;
-          if (element.type === "radio") {
+          if (
+            element.type === "radio" &&
+            currentSection.id === "activity-level-form"
+          ) {
+            errorElement.style.textAlign = "center";
+            element.parentElement.parentElement.parentElement.after(
+              errorElement
+            );
+          } else if (element.type === "radio") {
             element.parentElement.parentElement.after(errorElement);
           } else {
             element.after(errorElement);

@@ -392,6 +392,11 @@ In the "Goal details" section, the user can update the target date, weight and h
     <td style="text-align: center; width: 15%">Y</td>
     <td style="text-align: left;">I was using the :has selector and it is not supported in Firefox. I had to stop using the :has selector and restructure the code so that it now works.</td>
   </tr>
+   <tr>
+    <td style="text-align: left;">On the activity level section, the error message appears as a sibling to the card as opposed to a sibling of the parent.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">After re-structuring the code, the javascript that was selecting parent was no longer the same parent, so I had to add in another parent to correct position the error.</td>
+  </tr>
 </table>
 
 <br>
