@@ -452,7 +452,10 @@ const checkGoalRequiredFields = () => {
   }
 
   // select target weight input
-  if (window.location.pathname !== "/walking-goal.html") {
+  if (
+    window.location.pathname !== "/walking-goal.html" &&
+    window.location.pathname !== "/A-Great-Step/walking-goal.html"
+  ) {
     const targetWeightInput = document.querySelector("#target-weight");
     if (targetWeightInput.value < targetWeightInput.min) {
       return [
