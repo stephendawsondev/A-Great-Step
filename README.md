@@ -384,8 +384,8 @@ In the "Goal details" section, the user can update the target date, weight and h
   </tr>
   <tr>
     <td style="text-align: left;">If there is an error on one section of the homepage, it prevents the "Next" or "Generate plan" button from submitting, even if there isn't an error on their sections.</td>
-    <td style="text-align: center; width: 15%">N</td>
-    <td style="text-align: left;">This originally wasn't as serious an issue because the user was going to have to step through the form. However, now it is a pretty big bug, so I will need to update the logic so that the validation on applies to the button in a given section.</td>
+    <td style="text-align: center; width: 15%">Y</td>
+    <td style="text-align: left;">This originally wasn't as serious an issue because the user was going to have to step through the form. I fixed it by checking for errors in the current section as opposed to the whole document.</td>
   </tr>
   <tr>
     <td style="text-align: left;">In Firefox, the days of the week checkboxes were not being checked.</td>

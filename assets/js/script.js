@@ -203,6 +203,8 @@ const handleNextButtonClick = (event, currentSectionIndex) => {
   if (currentSection.id === "goal-form") {
     const [isValid, error] = checkGoalRequiredFields();
     if (!isValid) {
+      // check if an error message already exists
+      if (currentSection.querySelector(".error")) return;
       // display error message
       const errorElement = document.createElement("p");
       errorElement.classList.add("error");
@@ -323,12 +325,12 @@ const handleFormValidation = (currentSectionIndex) => {
   }
 
   // check if any errors exist
-  const errors = [...document.querySelectorAll(".error")];
+  const errors = [...currentSection.querySelectorAll(".error")];
   if (errors.length > 0) {
     containsErrors = true;
   }
 
-  if (containsErrors) return false;
+  if (containsErrors && currentSection.id !== "goal-form") return false;
   updateGoalObject(sectionFormElements);
   return true;
 };
