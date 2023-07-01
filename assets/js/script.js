@@ -204,7 +204,11 @@ const handleNextButtonClick = (event, currentSectionIndex) => {
     const [isValid, error] = checkGoalRequiredFields();
     if (!isValid) {
       // check if an error message already exists
-      if (currentSection.querySelector(".error")) return;
+      if (currentSection.querySelector(".error")) {
+        const errorElement = currentSection.querySelector(".error");
+        errorElement.textContent = error;
+        return;
+      }
       // display error message
       const errorElement = document.createElement("p");
       errorElement.classList.add("error");
@@ -217,11 +221,14 @@ const handleNextButtonClick = (event, currentSectionIndex) => {
       window.location.href = "walking-goal.html";
     }
   }
-  // scroll to the next section
-  const nextSection =
-    document.getElementsByTagName("section")[currentSectionIndex + 1];
 
-  nextSection.scrollIntoView();
+  if (currentSection.id !== "goal-form") {
+    // scroll to the next section
+    const nextSection =
+      document.getElementsByTagName("section")[currentSectionIndex + 1];
+
+    nextSection.scrollIntoView();
+  }
 };
 
 /**
@@ -444,6 +451,25 @@ const checkGoalRequiredFields = () => {
     ];
   }
 
+  // select target weight input
+  if (window.location.pathname !== "/walking-goal.html") {
+    const targetWeightInput = document.querySelector("#target-weight");
+    if (targetWeightInput.value < targetWeightInput.min) {
+      return [
+        false,
+        `Your target weight must be greater than ${targetWeightInput.min}kg.`,
+      ];
+    }
+  }
+
+  if (goal.weight <= goal["target-weight"]) {
+    return [false, "Your target weight must be less than your current weight."];
+  }
+
+  if (goal["target-date"] < new Date().toISOString().split("T")[0]) {
+    return [false, "Your target date must be in the future."];
+  }
+
   return [true, goal];
 };
 
@@ -487,7 +513,8 @@ const calculateGoalDetails = () => {
   const increasedPace = document.querySelector(".increase-pace .pace-per-hour");
 
   // days available to walk per week
-  const numDaysAvailable = daysAvailable.length;
+  let numDaysAvailable = daysAvailable.length;
+  numDaysAvailable = numDaysAvailable === 0 ? 7 : numDaysAvailable;
 
   const weightToLose = weight - targetWeight;
 
