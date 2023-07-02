@@ -609,8 +609,8 @@ In the "Goal details" section, the user can update the target date, weight and h
     </tr>
     <tr>
       <td style="text-align: left;">If the weight is a three-digit number, the error that "the target weight must be less than your current weight" is shown, even if the is less.</td>
-      <td style="text-align: center; width: 15%">N</td>
-      <td style="text-align: left;">I need to check the logic.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">It looks like the fact one (or both) were being treated as strings instead of numbers caused the issue.</td>
     </tr>
   </table>
 </details>
