@@ -465,7 +465,7 @@ const checkGoalRequiredFields = () => {
     }
   }
 
-  if (goal.weight <= goal["target-weight"]) {
+  if (Number(goal.weight) <= Number(goal["target-weight"])) {
     return [false, "Your target weight must be less than your current weight."];
   }
 
