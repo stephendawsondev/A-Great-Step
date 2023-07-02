@@ -336,9 +336,218 @@ In the "Goal details" section, the user can update the target date, weight and h
 ### Further Testing
 
 - The app was tested on Google Chrome, Mozilla Firefox and Safari browsers.
-- The app was viewed on a variety of devices such as Desktop, Laptop and iPhone 8 and 11.
+- The app was viewed on a variety of devices such as Mac, Samsung Galaxy S22 and iPhone 11.
 - Family members were asked to review the app and documentation to point out any bugs and/or user experience issues.
 - I made sure to test the app's accessibility using keyboard.
+
+<br>
+
+### Manual testing
+
+<br>
+<details><summary>Click to expand the manual testing table</summary>
+  <table style="width: 100%;">
+    <tr>
+      <th style="text-align: left;">Test</th>
+      <th style="text-align: left;">Expected behaviour</th>
+      <th style="text-align: center;">Chrome Desktop Passed? (Macbook - Ventura 13.4)</th>
+      <th style="text-align: center;">Safari Desktop Passed? (Macbook - Ventura 13.4)</th>
+      <th style="text-align: center;">Firefox Desktop Passed? (Windows 11 - Firefox 114)</th>
+      <th style="text-align: center;">Chrome Mobile Passed? (Samsung Galaxy S22)</th>
+      <th style="text-align: center;">Safari Mobile Passed?</th>
+      <th style="text-align: center;">Firefox Mobile Passed?</th>
+    <tr>
+      <td style="text-align: left;">Click "Import goal" button.</td>
+      <td style="text-align: left;">Modal should open to allow user to input JSON.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Add invalid JSON and submit.</td>
+      <td style="text-align: left;">Instead of submitting, a an error message should be displayed. More than one message should not be displayed when clicked again.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "X" on modal.</td>
+      <td style="text-align: left;">Should dismiss the modal but should not remove the JSON.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Adding valid JSON and submit.</td>
+      <td style="text-align: left;">Should submit successfully and redirect to the walking goal page where the details are populated.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Create a goal".</td>
+      <td style="text-align: left;">Auto-scroll to the next section.</td>
+      <td style="text-align: center">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y - but smooth scroll isn't working</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>;
+    <tr>
+      <td style="text-align: left;">Click "Back" in your details section with empty fields.</td>
+      <td style="text-align: left;">Should scroll back to previous section.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Back" button when fields are filled in.</td>
+      <td style="text-align: left;">Should scroll back to previous section and keep field values.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Next" button when fields are empty.</td>
+      <td style="text-align: left;">Should display error messages below required fields and <em>not</em> update the object in Local Storage.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Add required input to a field with an error message.</td>
+      <td style="text-align: left;">Should dismiss the error message when valid input is added.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Next" button when fields required fields are filled in.</td>
+      <td style="text-align: left;">Should progress to the next section and update the object in Local Storage.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Generate plan" button when the section fields are filled in but target weight is greater than current weight.</td>
+      <td style="text-align: left;">Error message should display and prevent submission.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Generate plan" button when the section fields are filled in but target weight less than input minimum (50kg).</td>
+      <td style="text-align: left;">Error message should display and prevent submission.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Generate plan" button when the section fields are filled in but target date is in the past.</td>
+      <td style="text-align: left;">Error message should display and prevent submission.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Generate plan" button when the section fields are filled in but other required fields are missing from goal object in Local Storage.</td>
+      <td style="text-align: left;">Error message should display saying which fields are missing and prevent submission.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Generate plan" button when the section fields and all required fields are filled in correctly.</td>
+      <td style="text-align: left;">Update the object in local storage and redirect to Walking Goal page.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Return home" button on Walking Goal page.</td>
+      <td style="text-align: left;">Go to the landing page (all fields should contain values from Local Storage).</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Export goal" button on Walking Goal page.</td>
+      <td style="text-align: left;">JSON Object from Local Storage should be copied to the clipboard.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Input a random page that does not exist.</td>
+      <td style="text-align: left;">404 page should be displayed.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Click "Return home" button.</td>
+      <td style="text-align: left;">Should be brought back to the homepage.</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+      <td style="text-align: center;">Y</td>
+    </tr>
+  </table>
+</details>
 
 <br>
 
@@ -346,59 +555,65 @@ In the "Goal details" section, the user can update the target date, weight and h
 
 <br>
 
-<table style="width: 100%;">
-  <tr>
-    <th style="text-align: left;">Bug</th>
-    <th style="text-align: center; width: 15%">Fixed (Y/N)</th>
-    <th style="text-align: left;">Additional comments</th>
-  </tr>
-  <tr>
-    <td style="text-align: left;">Overlapping sections on the homepage.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">Changed the sections to 100vh, which allowed for the section to take up the space it needed.</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">Duplicate "Invalid JSON" Error messages when importing JSON.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">I added a check in JavaScript to see if the error already existed. If it did, then another one wouldn't be added</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">Clicking the next or previous buttons create a 405 error.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">Since they were buttons inside a form, the default behaviour was to submit. I prevented the default event.</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">Clicking the next or previous buttons create a 405 error.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">Since they were buttons inside a form, the default behaviour was to submit. I prevented the default event.</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">Radio button error is only removed when first option is selected.</td>
-    <td style="text-align: center; width: 15%">N</td>
-    <td style="text-align: left;">When the error message is displayed, it is normally dismissed when the correct input is added, but for radio buttons, it is only dismissed when the first radio is selected. To fix it, I would need to loop through all the buttons to check if one option is selected, then dismiss the error.</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">When selecting the radio button, the value of the last radio button in the group is always passed instead of the selected one.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">When re-populating the values, I was accidentally overwriting the value of the selected input with the last value. I fixed the code so that it no longer happens.</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">If there is an error on one section of the homepage, it prevents the "Next" or "Generate plan" button from submitting, even if there isn't an error on their sections.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">This originally wasn't as serious an issue because the user was going to have to step through the form. I fixed it by checking for errors in the current section as opposed to the whole document.</td>
-  </tr>
-  <tr>
-    <td style="text-align: left;">In Firefox, the days of the week checkboxes were not being checked.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">I was using the :has selector and it is not supported in Firefox. I had to stop using the :has selector and restructure the code so that it now works.</td>
-  </tr>
-   <tr>
-    <td style="text-align: left;">On the activity level section, the error message appears as a sibling to the card as opposed to a sibling of the parent.</td>
-    <td style="text-align: center; width: 15%">Y</td>
-    <td style="text-align: left;">After re-structuring the code, the javascript that was selecting parent was no longer the same parent, so I had to add in another parent to correct position the error.</td>
-  </tr>
-</table>
-
+<details><summary>Click to expand the bugs encountered table</summary>
+  <table style="width: 100%;">
+    <tr>
+      <th style="text-align: left;">Bug</th>
+      <th style="text-align: center; width: 15%">Fixed (Y/N)</th>
+      <th style="text-align: left;">Additional comments</th>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Overlapping sections on the homepage.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">Changed the sections to 100vh, which allowed for the section to take up the space it needed.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Duplicate "Invalid JSON" Error messages when importing JSON.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">I added a check in JavaScript to see if the error already existed. If it did, then another one wouldn't be added</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Clicking the next or previous buttons create a 405 error.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">Since they were buttons inside a form, the default behaviour was to submit. I prevented the default event.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Clicking the next or previous buttons create a 405 error.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">Since they were buttons inside a form, the default behaviour was to submit. I prevented the default event.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">Radio button error is only removed when first option is selected.</td>
+      <td style="text-align: center; width: 15%">N</td>
+      <td style="text-align: left;">When the error message is displayed, it is normally dismissed when the correct input is added, but for radio buttons, it is only dismissed when the first radio is selected. To fix it, I would need to loop through all the buttons to check if one option is selected, then dismiss the error.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">When selecting the radio button, the value of the last radio button in the group is always passed instead of the selected one.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">When re-populating the values, I was accidentally overwriting the value of the selected input with the last value. I fixed the code so that it no longer happens.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">If there is an error on one section of the homepage, it prevents the "Next" or "Generate plan" button from submitting, even if there isn't an error on their sections.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">This originally wasn't as serious an issue because the user was going to have to step through the form. I fixed it by checking for errors in the current section as opposed to the whole document.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">In Firefox, the days of the week checkboxes were not being checked.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">I was using the :has selector and it is not supported in Firefox. I had to stop using the :has selector and restructure the code so that it now works.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">On the activity level section, the error message appears as a sibling to the card as opposed to a sibling of the parent.</td>
+      <td style="text-align: center; width: 15%">Y</td>
+      <td style="text-align: left;">After re-structuring the code, the javascript that was selecting parent was no longer the same parent, so I had to add in another parent to correct position the error.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;">If the weight is a three-digit number, the error that "the target weight must be less than your current weight" is shown, even if the is less.</td>
+      <td style="text-align: center; width: 15%">N</td>
+      <td style="text-align: left;">I need to check the logic.</td>
+    </tr>
+  </table>
+</details>
 <br>
 </details>
 
