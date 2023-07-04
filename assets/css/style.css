@@ -445,6 +445,10 @@ a.generate-plan {
     max-width: 1000px;
   }
 
+  section {
+    padding: initial;
+  }
+
   section .image-container {
     width: 45%;
   }
