@@ -582,10 +582,10 @@ const calculateGoalDetails = () => {
     return stepsRequiredPerDay.toFixed(0);
   };
 
-  startingStepsPerDay.textContent = `${
+  startingStepsPerDay.textContent = `${(
     calculateStepsPerDay(walkingPace) * 100
-  } steps`;
-  reducedStepsPerDay.textContent = `${
+  ).toLocaleString()} steps`;
+  reducedStepsPerDay.textContent = `${(
     calculateStepsPerDay(increasedPaceValue) * 100
-  } steps`;
+  ).toLocaleString()} steps`;
 };
