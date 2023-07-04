@@ -79,9 +79,9 @@ body {
 
 section {
   min-height: 100vh;
-  overflow: scroll;
   align-items: center;
   display: flex;
+  padding: 2em 0;
 }
 
 section * {
